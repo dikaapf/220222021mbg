@@ -822,7 +822,7 @@ class Auth extends MY_Controller {
 				$this->data['message'] = (validation_errors()) ? $this->prepare_message(validation_errors(), 1) : $this->session->flashdata('message');
 			}
 		}
-		
+		/*
 		if(isset($_POST['create']))
 		{
 			
@@ -905,6 +905,8 @@ class Auth extends MY_Controller {
 				$this->data['message_create'] = prepare_message(validation_errors(), 1);	
 			}
 		}
+		**/
+		
 
 		$this->data['activemenu'] 				= "login";
 		$this->data['groups'] = $this->base_model->fetch_records_from('groups', array('group_status' => 'Active', 'id != ' => 1));
@@ -2445,7 +2447,7 @@ function google_openid()
  }
 
  function daftar(){
-	
+	/*
 	if($this->ion_auth->logged_in())
 			redirect(URL_AUTH_INDEX);
 		
@@ -2562,5 +2564,8 @@ function google_openid()
 		
 		$this->data['content'] = 'auth/daftar';
 		$this->_render_page('template/site/site-template', $this->data);
+		**/
+
+		return print_r(1);
  }
 }
