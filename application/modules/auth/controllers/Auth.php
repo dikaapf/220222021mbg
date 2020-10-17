@@ -2537,7 +2537,7 @@ function google_openid()
 				$this->data['message_create'] = prepare_message(validation_errors(), 1);	
 			}
 		}
-
+**/
 		$this->data['activemenu'] 				= "login";
 		$this->data['groups'] = $this->base_model->fetch_records_from('groups', array('group_status' => 'Active', 'id != ' => 1));
 
@@ -2560,11 +2560,11 @@ function google_openid()
 			$this->data['pagetitle'] = $seo['seo_title'];
 			$this->data['meta_description'] = $seo['seo_description'];
 			$this->data['meta_keywords'] = $seo['seo_keywords'];
-		}
+		}	
 		
 		$this->data['content'] = 'auth/daftar';
 		$this->_render_page('template/site/site-template', $this->data);
-		**/
+	
 
 		// return print_r(1);
  }
