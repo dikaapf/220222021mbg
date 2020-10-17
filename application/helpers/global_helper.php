@@ -992,18 +992,18 @@ function getElementsByClass(&$parentNode, $tagName, $className) {
     return $nodes;
 }
 
-function before ($this, $inthat)
+function before ($thisx, $inthat)
 {
-	return substr($inthat, 0, strpos($inthat, $this));
+	return substr($inthat, 0, strpos($inthat, $thisx));
 }
-function between($this, $that, $inthat)
+function between($thisx, $that, $inthat)
 {
-	return before ($that, after($this, $inthat));
+	return before ($that, after($thisx, $inthat));
 }
-function after ($this, $inthat)
+function after ($thisx, $inthat)
 {
-	if (!is_bool(strpos($inthat, $this)))
-	return substr($inthat, strpos($inthat,$this)+strlen($this));
+	if (!is_bool(strpos($inthat, $thisx)))
+	return substr($inthat, strpos($inthat,$thisx)+strlen($thisx));
 }
 
 function getWikiVcard($author_name = '', $length = '', $author_id = ''){
