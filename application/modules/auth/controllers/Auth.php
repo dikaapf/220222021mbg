@@ -906,7 +906,7 @@ class Auth extends MY_Controller {
 			}
 		}
 		**/
-		
+
 
 		$this->data['activemenu'] 				= "login";
 		$this->data['groups'] = $this->base_model->fetch_records_from('groups', array('group_status' => 'Active', 'id != ' => 1));
@@ -2566,6 +2566,6 @@ function google_openid()
 		$this->_render_page('template/site/site-template', $this->data);
 		**/
 
-		return print_r(1);
+		// return print_r(1);
  }
 }
