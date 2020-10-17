@@ -6,6 +6,9 @@ class Auth extends MY_Controller {
 	
 	function __construct()
 	{
+		require APPPATH.'libraries/phpmailer/src/Exception.php';
+                require APPPATH.'libraries/phpmailer/src/PHPMailer.php';
+                require APPPATH.'libraries/phpmailer/src/SMTP.php';
 		parent::__construct();
 		$this->load->database();
 		$this->load->library(array('ion_auth','form_validation', 'grocery_CRUD'));
@@ -2445,9 +2448,10 @@ function google_openid()
     echo $e->getMessage();
     }
  }
+ 				
 
  function daftar(){
-	/*
+	
 	if($this->ion_auth->logged_in())
 			redirect(URL_AUTH_INDEX);
 		
@@ -2457,7 +2461,7 @@ function google_openid()
 		
 		if(isset($_POST['create']))
 		{
-			
+			/*
 			$tables 						= $this->config->item('tables','ion_auth');
 			$identity_column 				= $this->config->item('identity','ion_auth');
 			$this->data['identity_column'] 	= $identity_column;
@@ -2536,8 +2540,49 @@ function google_openid()
 			{
 				$this->data['message_create'] = prepare_message(validation_errors(), 1);	
 			}
+
+			**/
+			// return print_r($_POST);
+			// PHPMailer object
+			$response = false;
+			$mail = new PHPMailer();
+		  
+   
+		   // SMTP configuration
+		   $mail->isSMTP();
+		   $mail->Host     = 'mubaligh.id '; //sesuaikan sesuai nama domain hosting/server yang digunakan
+		   $mail->SMTPAuth = true;
+		   $mail->Username = 'no-reply@mubaligh.id'; // user email
+		   $mail->Password = 'noreply123#'; // password email
+		   $mail->SMTPSecure = 'ssl';
+		   $mail->Port     = 465;
+   
+		   $mail->setFrom('no-reply@mubaligh.id', ''); // user email
+		   $mail->addReplyTo('admin@mubaligh.id', ''); //user email
+   
+		   // Add a recipient
+		   $mail->addAddress('oman.buluatie@gmail.com'); //email tujuan pengiriman email
+   
+		   // Email subject
+		   $mail->Subject = 'Registrasi Pengguna Baru - Mubaligh Id'; //subject email
+   
+		   // Set email format to HTML
+		   $mail->isHTML(true);
+   
+		   // Email body content
+		   $mailContent = "&lt;h1>SMTP Codeigniterr&lt;/h1>
+			   &lt;p>Selamat Pendaftaran Berhasi dilakukan.&lt;/p>"; // isi email
+		   $mail->Body = $mailContent;
+   
+		   // Send email
+		   if(!$mail->send()){
+			   echo 'Message could not be sent.';
+			   echo 'Mailer Error: ' . $mail->ErrorInfo;
+		   }else{
+			   echo 'Message has been sent';
+		   }
 		}
-**/
+
 		$this->data['activemenu'] 				= "login";
 		$this->data['groups'] = $this->base_model->fetch_records_from('groups', array('group_status' => 'Active', 'id != ' => 1));
 
