@@ -2314,7 +2314,7 @@ class Auth extends MY_Controller
             $mail->addReplyTo('admin@mubaligh.id', ''); //user email
 
             // Add a recipient
-            $mail->addAddress('oliz.ramlan@gmail.com'); //email tujuan pengiriman email
+            $mail->addAddress('oman.buluatie@gmail.com'); //email tujuan pengiriman email
 
             // Email subject
             $mail->Subject = 'Registrasi Pengguna Baru - Mubaligh Id'; //subject email
