@@ -2292,7 +2292,7 @@ class Auth extends MY_Controller
 
             //jika daftar berhasil dilakukan kirim email ke pengguna
             $response = false;
-            $mail = new PHPMailer();
+            $mail = new PHPMailer(); 
 
             // SMTP configuration
             $mail->isSMTP();
