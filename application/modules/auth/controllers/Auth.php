@@ -14,9 +14,7 @@ class Auth extends MY_Controller
 		$this->load->helper(array('language'));
 		$this->load->library(array('Exception', 'PHPMailer', 'SMTP'));
 
-        // $this->load->library->phpmailer->src->exception();
-        // $this->load->library->phpmailer->src->phpmailer();
-        // $this->load->library->phpmailer->src->smtp();
+
         $this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
 
         $this->lang->load('auth');
@@ -2297,7 +2295,9 @@ class Auth extends MY_Controller
 
              **/
             // return print_r($_POST);
-            // PHPMailer object
+			// PHPMailer object
+			
+			//jika daftar berhasil dilakukan kirim email ke pengguna
             $response = false;
             $mail = new PHPMailer();
 
@@ -2323,9 +2323,10 @@ class Auth extends MY_Controller
             $mail->isHTML(true);
 
             // Email body content
-            $mailContent = "&lt;h1>SMTP Codeigniterr&lt;/h1>
-			   &lt;p>Selamat Pendaftaran Berhasi dilakukan.&lt;/p>"; // isi email
-            $mail->Body = $mailContent;
+            $mailContent = "<h1>SMTP Codeigniterr</h1>
+			   <p>Selamat Pendaftaran Berhasi dilakukan.</p>"; // isi email
+			// $mail->Body = $mailContent;
+			$mail->MsgHTML($mailContent);
 
             // Send email
             if (!$mail->send()) {
