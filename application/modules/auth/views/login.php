@@ -48,7 +48,7 @@
 				</div>
 			</div>
 			<!-- Sign up section -->
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 				<span class="error"><?php echo (isset($message_create)) ? $message_create : '';?></span>
 				<div class="sign-block">
 					<h2><span><?php echo get_languageword('Register');?> </span> <?php echo get_languageword('With Tutors');?></h2>
@@ -177,7 +177,7 @@
 						<button class="btn-link-dark  center-block" type="submit" name="create"><?php echo get_languageword('Create an Account');?></button>
 					</form>
 				</div>
-			</div>
+			</div> -->
 
 		</div>
 	</div>
