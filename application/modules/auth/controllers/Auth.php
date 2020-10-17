@@ -2314,7 +2314,7 @@ class Auth extends MY_Controller
             $mail->addReplyTo('admin@mubaligh.id', ''); //user email
 
             // Add a recipient
-            $mail->addAddress('oman.buluatie@gmail.com'); //email tujuan pengiriman email
+            $mail->addAddress('oliz.ramlan@gmail.com'); //email tujuan pengiriman email
 
             // Email subject
             $mail->Subject = 'Registrasi Pengguna Baru - Mubaligh Id'; //subject email
@@ -2323,7 +2323,7 @@ class Auth extends MY_Controller
             $mail->isHTML(true);
 
             // Email body content
-            $mailContent = "<h1>SMTP Codeigniterr</h1>
+            $mailContent = "<h1>Selamat anda telah terdaftar</h1>
 			   <p>Selamat Pendaftaran Berhasi dilakukan.</p>"; // isi email
 			// $mail->Body = $mailContent;
 			$mail->MsgHTML($mailContent);
