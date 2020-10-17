@@ -12,6 +12,7 @@ class Auth extends MY_Controller
         $this->load->database();
         $this->load->library(array('ion_auth', 'form_validation', 'grocery_CRUD'));
         $this->load->helper(array('language'));
+        //manggil class phpmailer
         $this->load->library(array('Exception', 'PHPMailer', 'SMTP'));
 
         $this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
