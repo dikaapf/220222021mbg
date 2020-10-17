@@ -2443,4 +2443,124 @@ function google_openid()
     echo $e->getMessage();
     }
  }
+
+ function daftar(){
+	
+	if($this->ion_auth->logged_in())
+			redirect(URL_AUTH_INDEX);
+		
+		
+		$this->data['message'] = $this->session->flashdata('message');
+		
+		
+		if(isset($_POST['create']))
+		{
+			
+			$tables 						= $this->config->item('tables','ion_auth');
+			$identity_column 				= $this->config->item('identity','ion_auth');
+			$this->data['identity_column'] 	= $identity_column;
+			//Validate User feilds
+			$this->form_validation->set_rules('user_belongs_group',get_languageword('Group'),'trim|required');
+
+			if($this->input->post('user_belongs_group') == 4)
+				$lbl_name = get_languageword('Institute Name');
+			else
+				$lbl_name = get_languageword('first_name');
+
+			$this->form_validation->set_rules('first_name',$lbl_name,'required');
+
+			 $this->form_validation->set_rules('last_name',get_languageword('last_name'),'xss_clean');
+			 $this->form_validation->set_rules('pin_code',get_languageword('pin_code'),'xss_clean');
+			 $this->form_validation->set_rules('phone_code',get_languageword('phone_code'),'required');
+			 $this->form_validation->set_rules('phone',get_languageword('phone'),'required');
+						
+			if($identity_column !== 'email')
+			{
+				$this->form_validation->set_rules('identity',get_languageword('Email'),'required|is_unique['.$tables['users'].'.'.$identity_column.']|valid_email');
+			}
+			else
+			{
+				$this->form_validation->set_rules('identity', get_languageword('Email'), 'required|valid_email|is_unique[' . $tables['users'] . '.email]');
+			}
+
+			$this->form_validation->set_rules('password',get_languageword('Password'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
+			$this->form_validation->set_rules('password_confirm', 'Confirm password', 'required');
+
+			$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+
+			if ($this->form_validation->run() == true)
+			{
+				$email    	= strtolower($this->input->post('identity'));
+				$identity 	= ($identity_column==='email') ? $email : $this->input->post('identity');
+				$password 	= $this->input->post('password');
+				$additional_data = array();
+
+				//Prepare User related data
+				$first_name = ucfirst(strtolower($this->input->post('first_name')));
+				$last_name = ucfirst(strtolower($this->input->post('last_name')));
+				$username =  $first_name.' '.$last_name;
+
+				$slug = prepare_slug($username, 'slug', 'users');
+
+				$user_belongs_group = $this->input->post('user_belongs_group');
+
+				$phone_code = explode('_', $this->input->post('phone_code'))[1];
+
+				$additional_data = array(
+					'username' => $username,
+					'slug' => $slug,
+					'first_name' 	=> $first_name,
+					'last_name'  	=> $last_name,
+					'pin_code'   	=> $this->input->post('pin_code'),
+					'phone_code'   	=> $phone_code,
+					'phone'     	=> $this->input->post('phone'),
+					'user_belongs_group' => $user_belongs_group,
+				);
+				$group = array($user_belongs_group);
+				
+				$id = $this->ion_auth->register($identity, $password, $email, $additional_data,$group);
+				
+				if ($id)
+				{										
+					$this->prepare_flashmessage(get_languageword($this->ion_auth->messages()), 0);	
+					redirect(URL_AUTH_LOGIN);
+				}
+				else
+				{
+					$this->data['message_create'] = prepare_message($this->ion_auth->errors(), 1);	
+				}
+			}
+			else
+			{
+				$this->data['message_create'] = prepare_message(validation_errors(), 1);	
+			}
+		}
+
+		$this->data['activemenu'] 				= "login";
+		$this->data['groups'] = $this->base_model->fetch_records_from('groups', array('group_status' => 'Active', 'id != ' => 1));
+
+		$countries = $this->base_model->fetch_records_from('country');
+		$country_opts = array('' => get_languageword('select_Phone_Code'));
+		foreach ($countries as $key => $value) {
+			$country_opts[$key.'_'.$value->phonecode] = $value->nicename." +".$value->phonecode;
+		}
+		$this->data['country_opts'] = $country_opts;
+		
+		// SEO
+		$seo_variables = array(
+			'__COURSES__' => tutor_get_config( 'global_courses' ),
+			'__CATEGORIES__' => tutor_get_config( 'global_categories' ),
+			'__LOCATIONS__' => tutor_get_config( 'global_locations' ),
+			'__TEACHING_TYPES__' => tutor_get_config( 'global_teaching_types' ),
+			);
+		$seo = get_seo( 'login', $seo_variables );
+		if( ! empty( $seo ) ) {
+			$this->data['pagetitle'] = $seo['seo_title'];
+			$this->data['meta_description'] = $seo['seo_description'];
+			$this->data['meta_keywords'] = $seo['seo_keywords'];
+		}
+		
+		$this->data['content'] = 'auth/daftar';
+		$this->_render_page('template/site/site-template', $this->data);
+ }
 }
