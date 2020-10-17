@@ -150,7 +150,12 @@ define('URL_PUBLIC_UPLOADS_CERTIFICATES', URL_RESOURCES . 'uploads' . DS . 'cert
 //Auth Module
 define('URL_AUTH_INDEX', SITEURL2. DS . 'auth'. DS .'index');
 define('URL_AUTH_LOGIN', SITEURL2. DS .'auth'. DS .'login');
+<<<<<<< Updated upstream
 define('URL_AUTH_DAFTAR', SITEURL2. DS .'auth'. DS .'dartar');
+=======
+define('URL_AUTH_DAFTAR', SITEURL2. DS .'auth'. DS .'daftar');
+
+>>>>>>> Stashed changes
 
 // define('URL_AUTH_LOGIN2', SITEURL2. DS .'auth'. DS .'login2');
 define('URL_AUTH_EDIT_USER', SITEURL2. DS .'auth'. DS .'edit_user');
