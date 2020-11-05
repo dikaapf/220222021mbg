@@ -2213,7 +2213,7 @@ class Auth extends MY_Controller
         $this->data['message'] = $this->session->flashdata('message');
 
         if (isset($_POST['create'])) {
-            print_r($_POST);
+            // print_r($_POST);
             // die();
             //jika daftar berhasil dilakukan kirim email ke pengguna
             $response = false;
