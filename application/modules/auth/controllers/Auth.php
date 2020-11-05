@@ -2215,6 +2215,44 @@ class Auth extends MY_Controller
         if (isset($_POST['create'])) {
             print_r($_POST);
             // die();
+            //jika daftar berhasil dilakukan kirim email ke pengguna
+            $response = false;
+            $mail = new PHPMailer();
+
+            // SMTP configuration
+            $mail->isSMTP();
+            $mail->Host = 'mubaligh.id '; //sesuaikan sesuai nama domain hosting/server yang digunakan
+            $mail->SMTPAuth = true;
+            $mail->Username = 'no-reply@mubaligh.id'; // user email
+            $mail->Password = 'w5WvFDVSGcEk'; // password email
+            $mail->SMTPSecure = 'ssl';
+            $mail->Port = 465;
+
+            $mail->setFrom('no-reply@mubaligh.id', ''); // user email
+            $mail->addReplyTo('admin@mubaligh.id', ''); //user email
+
+            // Add a recipient
+            $mail->addAddress($_POST['identity']); //email tujuan pengiriman email
+
+            // Email subject
+            $mail->Subject = 'Registrasi Pengguna Baru - Mubaligh Id'; //subject email
+
+            // Set email format to HTML
+            $mail->isHTML(true);
+
+            // Email body content
+            $mailContent = "<h1>Selamat anda telah terdaftar</h1>
+       <p>Selamat Pendaftaran Berhasi dilakukan.</p>"; // isi email
+            // $mail->Body = $mailContent;
+            $mail->MsgHTML($mailContent);
+
+            // Send email
+            if (!$mail->send()) {
+                echo 'Message could not be sent.';
+                echo 'Mailer Error: ' . $mail->ErrorInfo;
+            } else {
+                echo 'Message has been sent';
+            }
 
             $tables = $this->config->item('tables', 'ion_auth');
             $identity_column = $this->config->item('identity', 'ion_auth');
@@ -2282,45 +2320,6 @@ class Auth extends MY_Controller
                     redirect(URL_AUTH_DAFTAR);
                 } else {
                     $this->data['message_create'] = prepare_message($this->ion_auth->errors(), 1);
-                }
-
-                //jika daftar berhasil dilakukan kirim email ke pengguna
-                $response = false;
-                $mail = new PHPMailer();
-
-                // SMTP configuration
-                $mail->isSMTP();
-                $mail->Host = 'mubaligh.id '; //sesuaikan sesuai nama domain hosting/server yang digunakan
-                $mail->SMTPAuth = true;
-                $mail->Username = 'no-reply@mubaligh.id'; // user email
-                $mail->Password = 'w5WvFDVSGcEk'; // password email
-                $mail->SMTPSecure = 'ssl';
-                $mail->Port = 465;
-
-                $mail->setFrom('no-reply@mubaligh.id', ''); // user email
-                $mail->addReplyTo('admin@mubaligh.id', ''); //user email
-
-                // Add a recipient
-                $mail->addAddress($_POST['identity']); //email tujuan pengiriman email
-
-                // Email subject
-                $mail->Subject = 'Registrasi Pengguna Baru - Mubaligh Id'; //subject email
-
-                // Set email format to HTML
-                $mail->isHTML(true);
-
-                // Email body content
-                $mailContent = "<h1>Selamat anda telah terdaftar</h1>
-           <p>Selamat Pendaftaran Berhasi dilakukan.</p>"; // isi email
-                // $mail->Body = $mailContent;
-                $mail->MsgHTML($mailContent);
-
-                // Send email
-                if (!$mail->send()) {
-                    echo 'Message could not be sent.';
-                    echo 'Mailer Error: ' . $mail->ErrorInfo;
-                } else {
-                    echo 'Message has been sent';
                 }
 
             } else {
