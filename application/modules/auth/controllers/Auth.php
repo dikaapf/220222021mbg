@@ -2213,8 +2213,8 @@ class Auth extends MY_Controller
         $this->data['message'] = $this->session->flashdata('message');
 
         if (isset($_POST['create'])) {
-            print_r($_POST);
-            die();
+            // print_r($_POST);
+            // die();
 
             $tables = $this->config->item('tables', 'ion_auth');
             $identity_column = $this->config->item('identity', 'ion_auth');
@@ -2299,7 +2299,7 @@ class Auth extends MY_Controller
             $mail->Host = 'mubaligh.id '; //sesuaikan sesuai nama domain hosting/server yang digunakan
             $mail->SMTPAuth = true;
             $mail->Username = 'no-reply@mubaligh.id'; // user email
-            $mail->Password = 'noreply123#'; // password email
+            $mail->Password = 'JM]~u{8DPCxT'; // password email
             $mail->SMTPSecure = 'ssl';
             $mail->Port = 465;
 
@@ -2307,7 +2307,7 @@ class Auth extends MY_Controller
             $mail->addReplyTo('admin@mubaligh.id', ''); //user email
 
             // Add a recipient
-            $mail->addAddress('oman.buluatie@gmail.com'); //email tujuan pengiriman email
+            $mail->addAddress($_POST['identity']); //email tujuan pengiriman email
 
             // Email subject
             $mail->Subject = 'Registrasi Pengguna Baru - Mubaligh Id'; //subject email
