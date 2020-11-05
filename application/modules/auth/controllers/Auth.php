@@ -2205,25 +2205,26 @@ class Auth extends MY_Controller
 
     public function daftar()
     {
+        $response = false;
+        $mail = new PHPMailer(); 
 
         if ($this->ion_auth->logged_in()) {
             redirect(URL_AUTH_INDEX);
         }
 
         $this->data['message'] = $this->session->flashdata('message');
-
+        
         if (isset($_POST['create'])) {
             print_r($_POST);
             //jika daftar berhasil dilakukan kirim email ke pengguna
-            $response = false;
-            $mail = new PHPMailer(); 
+           
 
             // SMTP configuration
             $mail->isSMTP();
             $mail->Host = 'mubaligh.id '; //sesuaikan sesuai nama domain hosting/server yang digunakan
             $mail->SMTPAuth = true;
             $mail->Username = 'no-reply@mubaligh.id'; // user email
-            $mail->Password = 'JM]~u{8DPCxT'; // password email
+            $mail->Password = 'w5WvFDVSGcEk'; // password email
             $mail->SMTPSecure = 'ssl';
             $mail->Port = 465;
 
