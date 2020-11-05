@@ -2205,45 +2205,8 @@ class Auth extends MY_Controller
 
     public function daftar()
     {
-        //jika daftar berhasil dilakukan kirim email ke pengguna
-        $response = false;
-        $mail = new PHPMailer(); 
+        
 
-        // SMTP configuration
-        $mail->isSMTP();
-        $mail->Host = 'mubaligh.id '; //sesuaikan sesuai nama domain hosting/server yang digunakan
-        $mail->SMTPAuth = true;
-        $mail->Username = 'no-reply@mubaligh.id'; // user email
-        $mail->Password = 'w5WvFDVSGcEk'; // password email
-        $mail->SMTPSecure = 'ssl';
-        $mail->Port = 465;
-
-        $mail->setFrom('no-reply@mubaligh.id', ''); // user email
-        $mail->addReplyTo('admin@mubaligh.id', ''); //user email
-
-        // Add a recipient
-        $mail->addAddress('oman.buluatie@gmail.com'); //email tujuan pengiriman email
-
-        // Email subject
-        $mail->Subject = 'Registrasi Pengguna Baru - Mubaligh Id'; //subject email
-
-        // Set email format to HTML
-        $mail->isHTML(true);
-
-        // Email body content
-        $mailContent = "<h1>Selamat anda telah terdaftar</h1>
-           <p>Selamat Pendaftaran Berhasi dilakukan.</p>"; // isi email
-        // $mail->Body = $mailContent;
-        $mail->MsgHTML($mailContent);
-
-        // Send email
-        if (!$mail->send()) {
-            echo 'Message could not be sent.';
-            echo 'Mailer Error: ' . $mail->ErrorInfo;
-        } else {
-            echo 'Message has been sent';
-        }
-/*
         if ($this->ion_auth->logged_in()) {
             redirect(URL_AUTH_INDEX);
         }
@@ -2252,7 +2215,7 @@ class Auth extends MY_Controller
 
         if (isset($_POST['create'])) {
             print_r($_POST);
-            die();
+            // die();
 
             $tables = $this->config->item('tables', 'ion_auth');
             $identity_column = $this->config->item('identity', 'ion_auth');
@@ -2329,43 +2292,43 @@ class Auth extends MY_Controller
             // PHPMailer object
 
             //jika daftar berhasil dilakukan kirim email ke pengguna
-            $response = false;
-            $mail = new PHPMailer(); 
+        $response = false;
+        $mail = new PHPMailer(); 
 
-            // SMTP configuration
-            $mail->isSMTP();
-            $mail->Host = 'mubaligh.id '; //sesuaikan sesuai nama domain hosting/server yang digunakan
-            $mail->SMTPAuth = true;
-            $mail->Username = 'no-reply@mubaligh.id'; // user email
-            $mail->Password = 'noreply123#'; // password email
-            $mail->SMTPSecure = 'ssl';
-            $mail->Port = 465;
+        // SMTP configuration
+        $mail->isSMTP();
+        $mail->Host = 'mubaligh.id '; //sesuaikan sesuai nama domain hosting/server yang digunakan
+        $mail->SMTPAuth = true;
+        $mail->Username = 'no-reply@mubaligh.id'; // user email
+        $mail->Password = 'w5WvFDVSGcEk'; // password email
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port = 465;
 
-            $mail->setFrom('no-reply@mubaligh.id', ''); // user email
-            $mail->addReplyTo('admin@mubaligh.id', ''); //user email
+        $mail->setFrom('no-reply@mubaligh.id', ''); // user email
+        $mail->addReplyTo('admin@mubaligh.id', ''); //user email
 
-            // Add a recipient
-            $mail->addAddress('oman.buluatie@gmail.com'); //email tujuan pengiriman email
+        // Add a recipient
+        $mail->addAddress($_POST['identity']); //email tujuan pengiriman email
 
-            // Email subject
-            $mail->Subject = 'Registrasi Pengguna Baru - Mubaligh Id'; //subject email
+        // Email subject
+        $mail->Subject = 'Registrasi Pengguna Baru - Mubaligh Id'; //subject email
 
-            // Set email format to HTML
-            $mail->isHTML(true);
+        // Set email format to HTML
+        $mail->isHTML(true);
 
-            // Email body content
-            $mailContent = "<h1>Selamat anda telah terdaftar</h1>
-			   <p>Selamat Pendaftaran Berhasi dilakukan.</p>"; // isi email
-            // $mail->Body = $mailContent;
-            $mail->MsgHTML($mailContent);
+        // Email body content
+        $mailContent = "<h1>Selamat anda telah terdaftar</h1>
+           <p>Selamat Pendaftaran Berhasi dilakukan.</p>"; // isi email
+        // $mail->Body = $mailContent;
+        $mail->MsgHTML($mailContent);
 
-            // Send email
-            if (!$mail->send()) {
-                echo 'Message could not be sent.';
-                echo 'Mailer Error: ' . $mail->ErrorInfo;
-            } else {
-                echo 'Message has been sent';
-            }
+        // Send email
+        if (!$mail->send()) {
+            echo 'Message could not be sent.';
+            echo 'Mailer Error: ' . $mail->ErrorInfo;
+        } else {
+            echo 'Message has been sent';
+        }
         }
 
         $this->data['activemenu'] = "login";
@@ -2396,6 +2359,6 @@ class Auth extends MY_Controller
         $this->_render_page('template/site/site-template', $this->data);
 
         // return print_r(1);
-        **/
+        
     }
 }
