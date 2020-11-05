@@ -2213,8 +2213,8 @@ class Auth extends MY_Controller
         $this->data['message'] = $this->session->flashdata('message');
 
         if (isset($_POST['create'])) {
-            print_r($_POST);
-            die();
+            // print_r($_POST);
+            // die();
 
             $tables = $this->config->item('tables', 'ion_auth');
             $identity_column = $this->config->item('identity', 'ion_auth');
