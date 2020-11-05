@@ -2294,7 +2294,7 @@ class Auth extends MY_Controller
             $response = false;
             $mail = new PHPMailer(); 
 
-            // SMTP configuration
+            // SMTP configuration konfig
             $mail->isSMTP();
             $mail->Host = 'mubaligh.id '; //sesuaikan sesuai nama domain hosting/server yang digunakan
             $mail->SMTPAuth = true;
