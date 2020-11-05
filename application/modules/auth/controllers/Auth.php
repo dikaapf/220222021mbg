@@ -2215,6 +2215,7 @@ class Auth extends MY_Controller
         if (isset($_POST['create'])) {
             // print_r($_POST);
             // die();
+            
             //jika daftar berhasil dilakukan kirim email ke pengguna
             $response = false;
             $mail = new PHPMailer();
@@ -2253,6 +2254,7 @@ class Auth extends MY_Controller
             } else {
                 echo 'Message has been sent';
             }
+            //=== batas php mailer
 
             $tables = $this->config->item('tables', 'ion_auth');
             $identity_column = $this->config->item('identity', 'ion_auth');
@@ -2314,7 +2316,7 @@ class Auth extends MY_Controller
                 $group = array($user_belongs_group);
 
                 $id = $this->ion_auth->register($identity, $password, $email, $additional_data, $group);
-
+///==>
                 if ($id) {
                     $this->prepare_flashmessage(get_languageword($this->ion_auth->messages()), 0);
                     redirect(URL_AUTH_DAFTAR);
