@@ -1,17 +1,17 @@
 <?php $this->load->view('template/site/header'); ?>
 <!-- Page Title Wrap  -->
-<div class="page-title-wrap">
+<!-- <div class="page-title-wrap">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 <!-- Page Title Wrap  -->
 
-<!-- News Scroller  -->
-<?php $this->load->view('template/site/scroller'); ?>
+<!-- Disable News Scroller  -->
+<?php //$this->load->view('template/site/scroller'); ?>
 <!-- News Scroller  -->
 
 <!-- Dashboard section  -->

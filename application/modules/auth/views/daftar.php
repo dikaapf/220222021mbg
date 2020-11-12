@@ -51,7 +51,7 @@
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 				<span class="error"><?php echo (isset($message_create)) ? $message_create : '';?></span>
 				<div class="sign-block">
-					<h2><span><?php echo get_languageword('Register');?> </span> <?php echo get_languageword('With Tutors');?></h2>
+					<h2><b><?php echo get_languageword('Register');?></b></h2>
 					<?php echo form_open(current_uri(), array('class' => 'form-signup comment-form', 'name' => 'token_form', 'id' => 'token_form'));?>
 
 						
@@ -69,6 +69,17 @@
 							}
 							echo form_dropdown('user_belongs_group', $opt_groups, $this->form_validation->set_value('user_belongs_group'), 'id="u_group" class="select-picker" onchange="toggle_name();"');?>	
 						</div>
+						<!-- <?php
+						$data1 = array(
+        					'name'          => get_languageword('student'),
+							'id'            => '2',
+							'value'         => $this->form_validation->set_value('user_belongs_group'),
+							'checked'       => TRUE,
+							'style'         => 'margin:20px'
+						);
+						
+						echo form_checkbox($data1);
+						?> -->
 						</div>
 
 						<div class="input-group ">
@@ -136,7 +147,7 @@
 						</div>
 						
 						
-						<div class="input-group ">
+						<!-- <div class="input-group ">
 							<label><?php echo get_languageword('pin_code');?></label>
 							<?php 
 							$attributes = array(
@@ -147,7 +158,7 @@
 							'class' => 'form-control',
 							);
 							echo form_input($attributes);?>
-						</div>
+						</div> -->
 
 						
 						<div class="input-group ">

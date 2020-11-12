@@ -33,7 +33,8 @@
         <textarea rows="3" name="msg" placeholder="<?php echo get_languageword('My message is').'....';?>*"><?php echo set_value('msg'); ?></textarea>
         <?php echo form_error('msg'); ?>
     </div>
-    <p class="margin-bottom15"><?php echo get_languageword('We will never sell or rent your private info').'.' ?></p>
+    <!-- Hiden notif pesan -->
+    <!-- <p class="margin-bottom15"><?php echo get_languageword('We will never sell or rent your private info').'.' ?></p> -->
     <?php 
             $credits_for_sending_message = $this->config->item('site_settings')->credits_for_sending_message;
             if($credits_for_sending_message > 0) {
