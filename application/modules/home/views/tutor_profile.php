@@ -65,14 +65,14 @@
                             }?>
                             <h4><strong><?php echo get_languageword('experience'); ?>: </strong> <?php echo $row->teaching_experience." ".get_languageword('years'); ?></h4>
                             <h4><strong><?php echo get_languageword('qualification'); ?>:</strong>  <?php echo $row->qualification; ?></h4>
-                            <!-- Disable bahasa pengajaran dan Jenis Kelas Pengajaran -->
-                            <!-- <h4><strong><?php echo get_languageword('language_of_teaching'); ?>:</strong>  <?php echo $row->language_of_teaching; ?></h4> -->
-                            <!-- <?php if($row->academic_class != 'no' || $row->non_academic_class !='no'){?>
-                            <h4><strong><?php echo get_languageword('Teaching_Class_Types'); ?>: </strong>
+                            <h4><strong><?php echo get_languageword('language_of_teaching'); ?>:</strong>  <?php echo $row->language_of_teaching; ?></h4>
+                             <?php if($row->academic_class != 'no' || $row->non_academic_class !='no'){?>
+                            <h4><strong><?php echo get_languageword('Teaching_Class_Types'); ?>: </strong> 
                             <?php if($row->academic_class != 'no')
                                      echo get_languageword('Academic'); 
+
                                   if($row->non_academic_class !='no')
-                                   echo ', '. get_languageword('Non_Academic'); ?></h4><?php } ?>  -->                              
+                                   echo ', '. get_languageword('Non_Academic'); ?></h4><?php } ?>                                
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">

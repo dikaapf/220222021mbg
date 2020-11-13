@@ -5,7 +5,7 @@
 			<!-- Sign in section -->
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 				<div class="sign-block signin-left">
-					<h2><b><span><?php echo get_languageword('Sign In');?></span></b></h2>
+					<h2><span><?php echo get_languageword('Sign In');?></span> <?php echo get_languageword('With Your Account');?></h2>
 					
 					<span class="error"><?php echo $message;?></span>
 					<?php 

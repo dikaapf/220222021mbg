@@ -1,17 +1,18 @@
 <?php $this->load->view('template/site/header', $grocery_output); ?>
 
 
-    <!-- Gambar Page Title Wrap  -->
-    <!-- <div class="page-title-wrap">
+    <!-- Page Title Wrap  -->
+    <div class="page-title-wrap">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- Page Title Wrap  -->
-    <?php //$this->load->view('template/site/scroller'); ?>
+
+    <?php $this->load->view('template/site/scroller'); ?>
 
         <!-- Dashboard section  -->
         <section class="dashboard-section">
