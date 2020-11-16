@@ -16,8 +16,8 @@ if(count($package_data) > 0) {
 				<?php 
 				  foreach($package_data as $l) { ?>
 			   	<div class="col-lg-6 col-md-6 col-sm-12">
-				  <div class="pricing_div">
-					  <div class="site_pac_hed green-hed">
+				  <!-- <div class="pricing_div"> -->
+					  <!-- <div class="site_pac_hed green-hed">
 						
 						<?php 
 						$currency_symbol = '';
@@ -43,8 +43,8 @@ if(count($package_data) > 0) {
 							echo $final_cost;
 						}
 							?> 
-					 </div>
-					<div class="pack-list">
+					 </div> -->
+					<!-- <div class="pack-list">
 						<p><?php echo get_languageword('Package Name');?> <strong><?php echo $l->package_name?></strong></p>
 						<p><?php echo get_languageword('Credits'); ?> <strong><?php echo $l->credits?></strong></p>
 
@@ -60,7 +60,7 @@ if(count($package_data) > 0) {
 						<p><?php echo get_languageword('Package Cost');?> <strike><?php echo get_system_settings('currency_symbol').' '.$l->package_cost?></strike><strong> <b>
 						<?php echo  get_system_settings('currency_symbol').' '. $final_cost;?></b></strong></p>
 						
-					 </div>
+					 </div> -->
 
 					 <div class="radio">
 						<label>
@@ -74,7 +74,7 @@ if(count($package_data) > 0) {
 					</div>
 				  </div>
 				  <!--./pricing_div-->
-			   	</div>
+			   	<!-- </div> -->
 			   	<?php } ?>
 		   	</div>
 		</div>
