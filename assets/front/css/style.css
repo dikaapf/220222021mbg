@@ -2069,7 +2069,8 @@ background: linear-gradient(90deg, rgba(43,74,92,1) 0%, rgba(40,81,79,1) 50%, rg
 
 .header-margin {
     /* margin-top: 60px; */
-    margin-top: 60px;
+    margin-top: 150px;
+    margin-bottom: 150px;
 }
 
 .hero-title {
