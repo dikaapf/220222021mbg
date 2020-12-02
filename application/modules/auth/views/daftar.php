@@ -2,55 +2,10 @@
 <div class="login-register">
 	<div class="container">
 		<div class="row row-margin">
-			<!-- Sign in section -->
-			<!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-				<div class="sign-block signin-left">
-					<h2><span><?php echo get_languageword('Sign In');?></span> <?php echo get_languageword('With Your Account');?></h2>
-					
-					<span class="error"><?php echo $message;?></span>
-					<?php 
-					$attrs = array(
-					'name' => 'token_form',
-					'id' => 'token_form',
-					'class' => 'form-signin  comment-form',
-					);
-					echo form_open(current_uri(), $attrs);?>
-						<div class="input-group ">
-							<label><?php echo get_languageword('email');?><?php echo required_symbol();?></label>
-							<?php 
-							$attributes = array(
-							'name'	=> 'identity',
-							'id'	=> 'identity',
-							'value'	=> $this->form_validation->set_value('identity'),
-							'placeholder'=> get_languageword('email'),
-							'class' => 'form-control',
-							'type' => 'email',
-							);
-							echo form_input($attributes);?>							
-						</div>
-						<div class="input-group ">
-							<label><?php echo get_languageword('Password');?><?php echo required_symbol();?></label>
-							<?php 
-							$attributes = array(
-							'name'	=> 'password',
-							'id'	=> 'password',
-							'value'	=> $this->form_validation->set_value('password'),
-							'placeholder'=> get_languageword('password'),
-							'class' => 'form-control',
-							);
-							echo form_password($attributes);?>
-						</div>
-						<div class="check">
-							<a href="<?php echo URL_AUTH_FORGOT_PASSWORD;?>" class="forgot-pass"> <?php echo get_languageword('Forgot your password?');?></a>
-						</div>
-						<button class="btn-link-dark signin-btn center-block" type="submit" name="btnLogin"><?php echo get_languageword('Sign In');?></button>
-						</form>
-				</div>
-			</div> -->
 			<!-- Sign up section -->
-			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<span class="error"><?php echo (isset($message_create)) ? $message_create : '';?></span>
-				<div class="sign-block">
+				<div class="sign-block signin-center">
 					<h2><span><?php echo get_languageword('Register');?> </span></h2>
 					<?php echo form_open(current_uri(), array('class' => 'form-signup comment-form', 'name' => 'token_form', 'id' => 'token_form'));?>
 

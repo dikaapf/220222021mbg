@@ -2076,7 +2076,7 @@ background: linear-gradient(90deg, rgba(43,74,92,1) 0%, rgba(40,81,79,1) 50%, rg
 
 .hero-title {
     color: #ffffff;
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 300;
     text-align: center;
     line-height: 50px;
@@ -2085,7 +2085,7 @@ background: linear-gradient(90deg, rgba(43,74,92,1) 0%, rgba(40,81,79,1) 50%, rg
 
 .hero-tag {
     color: #ffffff;
-    font-size: 17px;
+    font-size: 25px;
     font-weight: 400;
     text-align: center;
     text-transform: capitalize;
@@ -3980,9 +3980,9 @@ Page >> Login / Register
     background: #fdfdfd;
 }
 
-.signin-left {
+.signin-center {
     float: right;
-    margin-right: 40px;
+    margin-right: 35%;
     width: 100%;
 }
 
@@ -5187,7 +5187,7 @@ Media Queries for Responsive
         margin-top: 0;
     }
     /*login page responsive*/
-    .signin-left {
+    .signin-center {
         float: none;
         margin-right: 0px;
     }

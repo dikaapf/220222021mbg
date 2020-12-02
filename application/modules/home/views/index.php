@@ -4,8 +4,8 @@
         <div class="container">
             <div class="row header-margin">
                 <div class="col-sm-12">
-                    <h1 class="hero-title"><?php echo get_languageword('Explore').' - '.get_languageword('Enrich').' - '.get_languageword('Excel');?></h1>
-                    <p class="hero-tag"><?php echo get_languageword('Everything you need in order to find the')?> <strong><?php echo get_languageword('right'); ?></strong> <?php echo get_languageword('class for you');?></p>
+                    <h5 class="hero-title"><?php echo get_languageword('Everything you need in order to find the')?> <?php echo get_languageword('right'); ?> <?php echo get_languageword('class for you');?></h5>
+                    <p class="hero-tag"><?php echo get_languageword('Explore').' - '.get_languageword('Enrich').' - '.get_languageword('Excel');?></p>
                 </div>
                 <?php if(!$this->ion_auth->is_tutor()) { ?>
                 <div class="col-sm-12">
