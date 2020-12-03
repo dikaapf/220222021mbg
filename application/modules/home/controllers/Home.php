@@ -520,7 +520,9 @@ class Home extends MY_Controller
 
 					$avail_records_cnt = " (".count($this->home_model->get_tutors(array('course_slug'=>$value->slug, 'location_slug'=>$location_slug, 'teaching_type_slug'=>$teaching_type_slug))).")";
 				}
-				$course_opts[$value->slug] = $value->name.$avail_records_cnt;
+				$course_opts[$value->slug] = $value->name;
+				//disable penambahan angka jumlah pencarian
+				// $course_opts[$value->slug] = $value->name.$avail_records_cnt;
 			}
 		}
 		$this->data['course_opts'] = $course_opts;
@@ -535,7 +537,9 @@ class Home extends MY_Controller
 
 					$avail_records_cnt = " (".count($this->home_model->get_tutors(array('location_slug'=>$value->slug, 'course_slug'=>$course_slug, 'teaching_type_slug'=>$teaching_type_slug))).")";
 				}
-				$location_opts[$value->slug] = $value->location_name.$avail_records_cnt;
+				$location_opts[$value->slug] = $value->location_name;
+				//disable penambahan angka jumlah pencarian
+				// $location_opts[$value->slug] = $value->location_name.$avail_records_cnt;
 			}
 		}
 		$this->data['location_opts'] = $location_opts;
@@ -677,7 +681,9 @@ class Home extends MY_Controller
 
 					$avail_records_cnt = " (".count($this->home_model->get_institutes(array('course_slug'=>$value->slug, 'location_slug'=>$location_slug, 'inst_slug'=>$inst_slug))).")";
 				}
-				$course_opts[$value->slug] = $value->name.$avail_records_cnt;
+				$course_opts[$value->slug] = $value->name;
+				//disable penambahan angka jumlah pencarian
+				// $course_opts[$value->slug] = $value->name.$avail_records_cnt;
 			}
 		}
 		$this->data['course_opts'] = $course_opts;
@@ -692,7 +698,9 @@ class Home extends MY_Controller
 
 					$avail_records_cnt = " (".count($this->home_model->get_institutes(array('location_slug'=>$value->slug, 'course_slug'=>$course_slug, 'inst_slug'=>$inst_slug))).")";
 				}
-				$location_opts[$value->slug] = $value->location_name.$avail_records_cnt;
+				$location_opts[$value->slug] = $value->location_name;
+				//disable penambahan angka jumlah pencarian
+				// $location_opts[$value->slug] = $value->location_name.$avail_records_cnt;
 			}
 		}
 		$this->data['location_opts'] = $location_opts;
@@ -824,7 +832,9 @@ class Home extends MY_Controller
 
 					$avail_records_cnt = " (".count($this->home_model->get_student_leads(array('course_slug'=>$value->slug, 'location_slug'=>$location_slug, 'teaching_type_slug'=>$teaching_type_slug))).")";
 				}
-				$course_opts[$value->slug] = $value->name.$avail_records_cnt;
+				$course_opts[$value->slug] = $value->name;
+				//disable penambahan angka jumlah pencarian
+				// $course_opts[$value->slug] = $value->name.$avail_records_cnt;
 			}
 		}
 		$this->data['course_opts'] = $course_opts;
@@ -839,7 +849,9 @@ class Home extends MY_Controller
 
 					$avail_records_cnt = " (".count($this->home_model->get_student_leads(array('location_slug'=>$value->slug, 'course_slug'=>$course_slug, 'teaching_type_slug'=>$teaching_type_slug))).")";
 				}
-				$location_opts[$value->slug] = $value->location_name.$avail_records_cnt;
+				$location_opts[$value->slug] = $value->location_name;
+				//disable penambahan angka jumlah pencarian
+				// $location_opts[$value->slug] = $value->location_name.$avail_records_cnt;
 			}
 		}
 		$this->data['location_opts'] = $location_opts;
