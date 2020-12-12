@@ -2222,10 +2222,10 @@ class Auth extends MY_Controller
 
             // SMTP configuration
             $mail->isSMTP();
-            $mail->Host = 'mubaligh.id '; //sesuaikan sesuai nama domain hosting/server yang digunakan
+            $mail->Host = 'mubaligh.id'; //sesuaikan sesuai nama domain hosting/server yang digunakan
             $mail->SMTPAuth = true;
             $mail->Username = 'no-reply@mubaligh.id'; // user email
-            $mail->Password = 'w5WvFDVSGcEk'; // password email
+            $mail->Password = 'noreply123#'; // password email
             $mail->SMTPSecure = 'ssl';
             $mail->Port = 465;
 
