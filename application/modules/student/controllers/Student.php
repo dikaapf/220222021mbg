@@ -1650,7 +1650,7 @@ class Student extends MY_Controller
 		$booking_details = $this->db->query( $query )->result();
 		// echo $query;
 		$link = '#';
-		if( count( $booking_details ) > 0 && $booking_details[0]->preferred_location == 'online-bbb' ) {
+		if( count( $booking_details ) > 0 && $booking_details[0]->preferred_location == 'online-class' ) {
 			$link = URL_VIRTUAL_CLASS . '/init/'.$primary_key;
 		}
 		return $link;
