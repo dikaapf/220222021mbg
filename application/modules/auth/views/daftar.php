@@ -140,7 +140,7 @@
 							</div>
 						</div>
 						
-						<button class="btn-link-dark  center-block" type="submit" name="create"><?php echo get_languageword('Create an Account');?></button>
+						<button class="btn-link-dark signin-btn center-block" type="submit" name="create"><?php echo get_languageword('Create an Account');?></button>
 					</form>
 				</div>
 			</div>
