@@ -1737,7 +1737,7 @@ class Student extends MY_Controller
 				//If Student updates the status as "start course", and if preferred teaching type is online, Email student's skype id to Tutor
 				//Email Alert to Tutor - Start
 				//Get Send Student's Skype Email Template
-				if($post_array['status'] == "running" && $booking_det->preferred_location == "online") {
+				if($post_array['status'] == "running" && $booking_det->preferred_location == "online-class") {
 
 					$email_tpl = $this->base_model->fetch_records_from('email_templates', array('template_status' => 'Active', 'email_template_id' => '7'));
 
