@@ -7,5 +7,5 @@
 		 $results = $CI->config->item('email_settings')->mandrill_api_key;
 			
 		 
-$config['mandrill_api_key'] = '12345';
+$config['mandrill_api_key'] = 'b684bf308e1dde93f5483330fac49074-us7';
  
