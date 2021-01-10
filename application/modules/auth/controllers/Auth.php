@@ -96,21 +96,7 @@ class Auth extends MY_Controller
                 if ($id) {
                     //pesan notif pendaftaran
 
-                    $from = "no-reply@mubaligh.id";
-                    $to = "oman.buluatie@gmail.com";
-                    $subject = "Checking PHP mail";
-                    $headers = "From: $from\r\n";
-                    $headers .= "MIME-Version: 1.0\r\n";
-                    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-                    $message = '<html><body>';
-                    $message = "Yth. $first_name,"
-                    . "\nTerima Kasih Telah Menggunakan Layanan Kami. Ini adalah email Otomatis. Tidak Perlu membalas email ini."
-                    . "<br>"
-                    . "<b>OK</b>";
-                    $message .= "PHP mail berjalan dengan baik";
-
-                    $message .= "</body></html>";
-                    mail($to, $subject, $message, $headers);
+                    
                     //====
 
                     $this->prepare_flashmessage(get_languageword($this->ion_auth->messages()), 0);
