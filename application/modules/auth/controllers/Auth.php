@@ -2213,47 +2213,67 @@ class Auth extends MY_Controller
         $this->data['message'] = $this->session->flashdata('message');
 
         if (isset($_POST['create'])) {
-            // print_r($_POST);
-            // die();
-            
+            print_r($_POST);
+            die();
+
             //jika daftar berhasil dilakukan kirim email ke pengguna
-            $response = false;
-            $mail = new PHPMailer();
+            //         $response = false;
+            //         $mail = new PHPMailer();
 
-            // SMTP configuration
-            $mail->isSMTP();
-            $mail->Host = 'mubaligh.id'; //sesuaikan sesuai nama domain hosting/server yang digunakan
-            $mail->SMTPAuth = true;
-            $mail->Username = 'no-reply@mubaligh.id'; // user email
-            $mail->Password = 'noreply123#'; // password email
-            $mail->SMTPSecure = 'ssl';
-            $mail->Port = 465;
+            //         // SMTP configuration
+            //         $mail->isSMTP();
+            //         $mail->Host = 'mubaligh.id'; //sesuaikan sesuai nama domain hosting/server yang digunakan
+            //         $mail->SMTPAuth = true;
+            //         $mail->Username = 'no-reply@mubaligh.id'; // user email
+            //         $mail->Password = 'noreply123#'; // password email
+            //         $mail->SMTPSecure = 'ssl';
+            //         $mail->Port = 465;
 
-            $mail->setFrom('no-reply@mubaligh.id', ''); // user email
-            $mail->addReplyTo('admin@mubaligh.id', ''); //user email
+            //         $mail->setFrom('no-reply@mubaligh.id', ''); // user email
+            //         $mail->addReplyTo('admin@mubaligh.id', ''); //user email
 
-            // Add a recipient
-            $mail->addAddress($_POST['identity']); //email tujuan pengiriman email
+            //         // Add a recipient
+            //         $mail->addAddress($_POST['identity']); //email tujuan pengiriman email
 
-            // Email subject
-            $mail->Subject = 'Registrasi Pengguna Baru - Mubaligh Id'; //subject email
+            //         // Email subject
+            //         $mail->Subject = 'Registrasi Pengguna Baru - Mubaligh Id'; //subject email
 
-            // Set email format to HTML
-            $mail->isHTML(true);
+            //         // Set email format to HTML
+            //         $mail->isHTML(true);
 
-            // Email body content
-            $mailContent = "<h1>Selamat anda telah terdaftar</h1>
-       <p>Selamat Pendaftaran Berhasi dilakukan.</p>"; // isi email
-            // $mail->Body = $mailContent;
-            $mail->MsgHTML($mailContent);
+            //         // Email body content
+            //         $mailContent = "<h1>Selamat anda telah terdaftar</h1>
+            //    <p>Selamat Pendaftaran Berhasi dilakukan.</p>"; // isi email
+            //         // $mail->Body = $mailContent;
+            //         $mail->MsgHTML($mailContent);
 
-            // Send email
-            if (!$mail->send()) {
-                echo 'Message could not be sent.';
-                echo 'Mailer Error: ' . $mail->ErrorInfo;
+            //         // Send email
+            //         if (!$mail->send()) {
+            //             echo 'Message could not be sent.';
+            //             echo 'Mailer Error: ' . $mail->ErrorInfo;
+            //         } else {
+            //             echo 'Message has been sent';
+            //         }
+            $to = 'oman.buluatie@gmail.com';
+            $subject = "Perubahan kata sandi Sdr. " ;
+
+            $headers = "From: DISDUKCAPIL JAYAWIJAYA\r\n";
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+            $message = '<html><body>';
+            $message = "Yth. Pendaftar,"
+            . "\nTerima Kasih Telah Menggunakan Layanan Kami. Ini adalah email Otomatis. Tidak Perlu membalas email ini."
+            . "<b>Terima Kasih.</b>";
+
+            $message .= "</body></html>";
+
+            if (mail($to, $subject, $message, $headers)) {
+               echo "Email successfully sent to ... $to";
             } else {
-                echo 'Message has been sent';
+               echo "Email sending failed...";
             }
+
+            die('stop');
             //=== batas php mailer
 
             $tables = $this->config->item('tables', 'ion_auth');
