@@ -271,7 +271,7 @@ class Payment extends MY_Controller
 						} catch ( Exception $e ) {
 							
 							//catch exception
-							sendEmail( 'adiyya@gmail.com', 'adiyya@gmail', 'Pagseguro Payment Status', $e->getMessage() );							
+							sendEmail( 'mubaligh.id@gmail.com', 'mubaligh.id@gmail.com', 'Pagseguro Payment Status', $e->getMessage() );							
 						}
 						
 					} elseif( $gateway_details[0]->type_id == WEBMONEY_PAYMENT_GATEWAY ) {
