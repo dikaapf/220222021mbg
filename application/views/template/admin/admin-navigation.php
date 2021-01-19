@@ -15,9 +15,10 @@
 			<a href='<?php echo URL_ADMIN_STUDENT_BOOKINGS;?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('student Bookings');?></a>
 			</li>
 			
-			<li <?php if(isset($activesubmenu) && $activesubmenu == 'inst_batches') echo ' class="active"';?>>
+			<!-- Disable Sementara -->
+			<!-- <li <?php if(isset($activesubmenu) && $activesubmenu == 'inst_batches') echo ' class="active"';?>>
 			<a href='<?php echo URL_ADMIN_INST_BATCHES;?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('institute_batches');?></a>
-			</li>
+			</li> -->
 			
 		</ul>
 		</li>
@@ -41,9 +42,10 @@
 			<a href='<?php echo URL_AUTH_INDEX;?>/3'><i class='fa fa-circle-o'></i> <?php echo get_languageword('tutors');?></a>
 			</li>
 			
-			<li <?php if(isset($activesubmenu) && $activesubmenu == '4') echo ' class="active"';?>>
+			<!-- Disable Sementara -->
+			<!-- <li <?php if(isset($activesubmenu) && $activesubmenu == '4') echo ' class="active"';?>>
 			<a href='<?php echo URL_AUTH_INDEX;?>/4'><i class='fa fa-circle-o'></i> <?php echo get_languageword('institutes');?></a>
-			</li>
+			</li> -->
 			
 			<li  <?php if(isset($activesubmenu) && $activesubmenu == 'add') echo ' class="active"';?>>
 			<a href='<?php echo URL_AUTH_INDEX;?>/add'><i class='fa fa-circle-o'></i> <?php echo get_languageword('create');?></a>
@@ -56,8 +58,8 @@
 		</li>
 
 
-
-		<li class='treeview <?php if(isset($activemenu) && $activemenu == 'myleads') echo 'active';?>'>
+	<!-- Disable Sementara -->
+	<!-- <li class='treeview <?php if(isset($activemenu) && $activemenu == 'myleads') echo 'active';?>'>
 		<a href='#'>
             <i class='fa fa-user-md'></i> <?php echo get_languageword('leads');?> <i class='fa fa-angle-left pull-right'></i>
 		</a>
@@ -73,21 +75,21 @@
 			</li>
 			
 		</ul>
-	</li>
+	</li> -->
 
-
+	<!-- Disable Sementara -->
 	<!--Tutor Selling Courses Start-->
-	<li <?php if(isset($activemenu) && $activemenu == 'tutor_selling_courses') echo ' class="active"';?>>
+	<!-- <li <?php if(isset($activemenu) && $activemenu == 'tutor_selling_courses') echo ' class="active"';?>>
 		<a href="<?php echo URL_TUTOR_LIST_SELLING_COURSES;?>">
 			<i class="fa fa-book"></i><?php echo get_languageword('Tutor_Selling_Courses');?></a>
-	</li>
+	</li> -->
 	<!--Tutor Selling Courses End-->
 
 
-	<li <?php if(isset($activemenu) && $activemenu == 'purchased_courses') echo ' class="active"';?>>
+	<!-- <li <?php if(isset($activemenu) && $activemenu == 'purchased_courses') echo ' class="active"';?>>
 			<a href="<?php echo URL_ADMIN_VIEW_PURCHASED_COURSES;?>">
 				<i class="fa fa-money"></i><?php echo get_languageword('View_Purchased_Courses');?></a>
-		</li>
+		</li> -->
 
 
 
@@ -106,8 +108,9 @@
 		</ul>
 	</li>
 
+	<!-- Disable Sementara -->
 	<!--Money Conversion From Institute-->
-	<li class='treeview <?php if(isset($activemenu) && $activemenu == 'inst_money_reqs') echo 'active';?>'>
+	<!-- <li class='treeview <?php if(isset($activemenu) && $activemenu == 'inst_money_reqs') echo 'active';?>'>
 		<a href='#'>
 			<i class='fa fa-money'></i> <?php echo get_languageword('institute_money_requests');?> <i class='fa fa-angle-left pull-right'></i>
 		</a>
@@ -119,7 +122,7 @@
 			<a href='<?php echo URL_ADMIN_INST_MONEY_CONVERSION_REQUESTS."/Done";?>'><i class='fa fa-circle-o'></i> <?php echo get_languageword('completed');?></a>
 			</li>
 		</ul>
-	</li>
+	</li> -->
 	
 	
 	<!--Catgories Start-->
