@@ -36,11 +36,11 @@
 	<div id="collapseOne" class="panel-collapse <?php if(isset($activemenu) && $activemenu == 'enquiries') echo 'collapse in'; else echo 'collapse';?>">
 		<div class="panel-body">
 			<ul class="dashboard-links">
-				<li <?php if(isset($activesubmenu) && $activesubmenu == 'all') echo 'class="active"';?>><a href="<?php echo URL_STUDENT_ENQUIRIES;?>"><?php echo get_languageword('All')?> </a></li>
+				<!-- <li <?php if(isset($activesubmenu) && $activesubmenu == 'all') echo 'class="active"';?>><a href="<?php echo URL_STUDENT_ENQUIRIES;?>"><?php echo get_languageword('All')?> </a></li> -->
 				<li <?php if(isset($activesubmenu) && $activesubmenu == get_languageword('pending')) echo 'class="active"';?>><a href="<?php echo URL_STUDENT_ENQUIRIES;?>/pending"><?php echo get_languageword('pending'); ?> </a></li>
 				<li <?php if(isset($activesubmenu) && $activesubmenu == get_languageword('approved')) echo 'class="active"';?>><a href="<?php echo URL_STUDENT_ENQUIRIES;?>/approved"><?php echo get_languageword('approved'); ?> </a></li>
 				<li <?php if(isset($activesubmenu) && $activesubmenu == get_languageword('session_initiated')) echo 'class="active"';?>><a href="<?php echo URL_STUDENT_ENQUIRIES;?>/session_initiated"><?php echo get_languageword('session_initiated'); ?> </a></li>
-				<li <?php if(isset($activesubmenu) && $activesubmenu == get_languageword('running')) echo 'class="active"';?>><a href="<?php echo URL_STUDENT_ENQUIRIES;?>/running"><?php echo get_languageword('running'); ?> </a></li>
+				<!-- <li <?php if(isset($activesubmenu) && $activesubmenu == get_languageword('running')) echo 'class="active"';?>><a href="<?php echo URL_STUDENT_ENQUIRIES;?>/running"><?php echo get_languageword('running'); ?> </a></li> -->
 				<li <?php if(isset($activesubmenu) && $activesubmenu == get_languageword('completed')) echo 'class="active"';?>><a href="<?php echo URL_STUDENT_ENQUIRIES;?>/completed"><?php echo get_languageword('completed'); ?> </a></li>
 				<li <?php if(isset($activesubmenu) && $activesubmenu == get_languageword('called_for_admin_intervention')) echo 'class="active"';?>><a href="<?php echo URL_STUDENT_ENQUIRIES;?>/called_for_admin_intervention"><?php echo get_languageword('claim_for_admin_intervention'); ?> </a></li>
 				<li <?php if(isset($activesubmenu) && $activesubmenu == get_languageword('closed')) echo 'class="active"';?>><a href="<?php echo URL_STUDENT_ENQUIRIES;?>/closed"><?php echo get_languageword('closed'); ?> </a></li>
@@ -55,8 +55,8 @@
 <!-- Disable Enrolled Course -->
 <!-- <div class="dashboard-link"><a <?php if(isset($activemenu) && $activemenu == 'enrolled_courses') echo 'class="active"';?> href="<?php echo URL_STUDENT_ENROLLED_COURSES ?>"><i class="fa fa-book"></i><?php echo get_languageword('Enrolled Courses');?></a></div> -->
 
-
-<div class="panel panel-default">
+<!-- Disable Sementara -->
+<!-- <div class="panel panel-default">
 	<div class="panel-heading">
 		<h4 class="panel-title">
 		<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseLeads">
@@ -64,7 +64,7 @@
 		</a>
 	</h4>
 	</div>
-	<!--/.panel-heading -->
+	
 	<div id="collapseLeads" class="panel-collapse <?php if(isset($activemenu) && $activemenu == 'myleads') echo 'collapse in'; else echo 'collapse';?>">
 		<div class="panel-body">
 			<ul class="dashboard-links">
@@ -72,10 +72,9 @@
 				<li <?php if(isset($activesubmenu) && $activesubmenu == 'post_requirement') echo 'class="active"';?>><a href="<?php echo URL_STUDENT_REQUIREMENTS ?>"><?php echo get_languageword('Post Requirement');?></a></li>
 			</ul>
 		</div>
-		<!--/.panel-body -->
+		
 	</div>
-	<!--/.panel-collapse -->
-</div>
+</div> -->
 
 <div class="panel panel-default">
 	<div class="panel-heading">
