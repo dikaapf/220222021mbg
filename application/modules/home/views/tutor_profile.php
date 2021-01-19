@@ -16,7 +16,7 @@
                         </div>
                         <?php echo get_user_online_status($row->is_online); ?>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
+                    <div class="col-lg-8 col-md-8 col-sm-4 col-xs-12">
                         <div class="user-profile-content">
                             <ul class="user-badges">
                                 <?php
@@ -53,7 +53,8 @@
                             <?php } ?>
                             <p> <?php echo $row->profile; ?> </p>
                             <hr>
-                            <?php 
+                            <!-- Disable Sementara -->
+                            <!-- <?php 
                                 if($row->show_contact!='None'){
                                     if($row->show_contact=='All' || $row->show_contact=='Email'){?>
                                     <h4><strong><?php echo get_languageword('email'); ?>: </strong> <?php echo $row->email; ?></h4>
@@ -62,7 +63,7 @@
                                      if($row->show_contact=='All' || $row->show_contact=='Mobile'){?>
                                     <h4><strong><?php echo get_languageword('phone'); ?>: </strong> <?php echo $row->phone; ?></h4>
                                     <?php }
-                            }?>
+                            }?> -->
                             <h4><strong><?php echo get_languageword('experience'); ?>: </strong> <?php echo $row->teaching_experience." ".get_languageword('years'); ?></h4>
                             <h4><strong><?php echo get_languageword('qualification'); ?>:</strong>  <?php echo $row->qualification; ?></h4>
                             <!-- Disable bahasa pengajaran dan Jenis Kelas Pengajaran -->
@@ -192,11 +193,7 @@
                 <div class="col-sm-12" id="reserve">
                     <h2 class="heading-line"><?php echo get_languageword('reserve_your_spot'); ?></h2>
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <h2 class="fee" id="fee"> </h2>
-                    <div class="feeperhour" id="duration"> </div>
-                    <div class="feeperhour" id="days_off"> </div>
-                </div>
+
                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
                     <?php 
                             $attributes = 'id="book_tutor_form" class="comment-form" ';
@@ -272,6 +269,11 @@
                                         <textarea name="message" rows="8" placeholder="<?php echo get_languageword('Hello My name is Diana and').'.....'?>"><?php echo set_value('message'); ?></textarea>
                                         <?php echo form_error('message'); ?>
                                     </div>
+                            <br>
+                            <h2 class="fee" id="fee"> </h2>
+                            <div class="feeperhour" id="duration"> </div>
+                            <div class="feeperhour" id="days_off"> </div>
+                            <br>
                                     <button id="request_tutor_btn" class="btn btn-link-dark" name="Submit" type="Submit"><?php echo get_languageword('request_this_tutor'); ?></button>
                                 </div>
                             </li>
