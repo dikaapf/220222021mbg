@@ -18,15 +18,16 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4 pad10">
+                    <!-- Disable Sementara rubah nomor block nya-->
+                    <!-- <div class="col-md-4 pad10">
                         <div class="dash-block d-block2">
                             <h2><?php echo $tutor_dashboard_data['total_bookings'];?><a class="pull-right" href="<?php echo base_url();?>student-enquiries"><?php echo get_languageword('view');?></a></h2>
                             <p><?php echo get_languageword('Total Bookings');?></p>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="col-md-4 pad10">
-                        <div class="dash-block d-block3">
+                        <div class="dash-block d-block2">
                             <h2><?php echo $tutor_dashboard_data['pending_bookings']?><a class="pull-right" href="<?php echo base_url();?>student-enquiries/pending"><?php echo get_languageword('view');?></a></h2>
                             <p><?php echo get_languageword('Bookings Pending');?></p>
                         </div>
@@ -35,21 +36,21 @@
 
 
                     <div class="col-md-4 pad10">
-                        <div class="dash-block d-block4">
+                        <div class="dash-block d-block3">
                             <h2><?php echo $tutor_dashboard_data['completed_bookings'];?><a class="pull-right" href="<?php echo base_url();?>student-enquiries/completed"><?php echo get_languageword('view');?></a></h2>
                             <p><?php echo get_languageword('Booking Completd');?></p>
                         </div>
                     </div>
 
-                    <div class="col-md-4 pad10">
+                    <!-- <div class="col-md-4 pad10">
                         <div class="dash-block d-block5">
                             <h2><?php echo $tutor_dashboard_data['running_bookings'];?><a class="pull-right" href="<?php echo base_url();?>student-enquiries/running"><?php echo get_languageword('view');?></a></h2>
                             <p><?php echo get_languageword('Booking Running');?></p>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="col-md-4 pad10">
-                        <div class="dash-block d-block6">
+                        <div class="dash-block d-block4">
                             <h2><?php echo $tutor_dashboard_data['courses'];?><a class="pull-right" href="<?php echo base_url();?>tutor/manage-courses"><?php echo get_languageword('view');?></a></h2>
                             <p><?php echo get_languageword('Total Tutoring Courses');?></p>
                         </div>
