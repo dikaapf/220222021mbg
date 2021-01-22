@@ -361,11 +361,11 @@
                             var content      = fee_duration[2];
                             var time_slots   = fee_duration[3];
                             var days_off     = fee_duration[4];
-
-                            $('#fee').text(fee);
-                            $('#duration').text('credits/'+duration);
+                            
+                            $('#fee').text('Rp. '+fee);
+                            $('#duration').text('Biaya / '+duration);
                             if(days_off)
-                                $('#days_off').text('Days off: '+days_off);
+                                $('#days_off').text('Hari Libur: '+days_off);
 
                             if(content) {
                                 $('#content_li').remove();
