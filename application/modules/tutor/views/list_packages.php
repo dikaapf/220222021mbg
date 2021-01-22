@@ -4,8 +4,8 @@
 
 <?php
 if(count($package_data) > 0) { 
-
-	echo '<div class="alert alert-info"><a href="#" class="close" data-dismiss="alert">×</a><strong>Info!</strong> '.get_languageword('please_become_premium_member_to_avail_additional_features_like').' "'.get_languageword('avail_in_students_course_search_results').'", "'.get_languageword('viewing_student_posted_leads').'" '.get_languageword('and').' "'.get_languageword('sending_messages').'". '.get_languageword('credits_required_to_become_premium_member ').'<strong>'.get_system_settings('min_credits_for_premium_tutor').'</strong></div>';
+	// Disable popup
+	// echo '<div class="alert alert-info"><a href="#" class="close" data-dismiss="alert">×</a><strong>Info!</strong> '.get_languageword('please_become_premium_member_to_avail_additional_features_like').' "'.get_languageword('avail_in_students_course_search_results').'", "'.get_languageword('viewing_student_posted_leads').'" '.get_languageword('and').' "'.get_languageword('sending_messages').'". '.get_languageword('credits_required_to_become_premium_member ').'<strong>'.get_system_settings('min_credits_for_premium_tutor').'</strong></div>';
 
 	?>
 <?php echo form_open('payment/index', 'id="tutor_subject_mngt" class="form-multi-select"');?>
