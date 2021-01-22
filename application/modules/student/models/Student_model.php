@@ -272,8 +272,8 @@ class Student_model extends CI_Model
 		$query = "select count(*) approved_bookings from ".$this->db->dbprefix('bookings')." where student_id = ".$student_id." And status='approved'";
 		$student_dashboard_data['approved_bookings'] = $this->db->query($query)->row()->approved_bookings;
 
-		// $query = "select count(*) initiated_bookings from ".$this->db->dbprefix('bookings')." where student_id = ".$student_id." And status='session_initiated'";
-		// $student_dashboard_data['initiated_bookings'] = $this->db->query($query)->row()->initiated_bookings;
+		$query = "select count(*) initiated_bookings from ".$this->db->dbprefix('bookings')." where student_id = ".$student_id." And status='session_initiated'";
+		$student_dashboard_data['initiated_bookings'] = $this->db->query($query)->row()->initiated_bookings;
 
 		$query = "select count(*) running_bookings from ".$this->db->dbprefix('bookings')." where student_id = ".$student_id." And status='running'";
 		$student_dashboard_data['running_bookings'] = $this->db->query($query)->row()->running_bookings;

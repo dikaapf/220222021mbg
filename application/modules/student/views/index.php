@@ -29,22 +29,22 @@
 			</div>
 		</div>	
 
-		<!-- <div class="col-md-4 pad10">
+		<div class="col-md-4 pad10">
 			<div class="dash-block d-block4">
 				<h2><?php echo $student_dashboard_data['initiated_bookings'];?><a class="pull-right" href="<?php echo base_url();?>enquiries/session_initiated"><?php echo get_languageword('View');?></a></h2>
 				<p><?php echo get_languageword('session_initiated');?></p>
 			</div>
-		</div> -->
+		</div>
 
 		<div class="col-md-4 pad10">
-			<div class="dash-block d-block4">
+			<div class="dash-block d-block5">
 				<h2><?php echo $student_dashboard_data['running_bookings'];?><a class="pull-right" href="<?php echo base_url();?>enquiries/running"><?php echo get_languageword('View');?></a></h2>
 				<p><?php echo get_languageword('Kelas_Berjalan');?></p>
 			</div>
 		</div>
 
 		<div class="col-md-4 pad10">
-			<div class="dash-block d-block5">
+			<div class="dash-block d-block6">
 				<h2><?php echo $student_dashboard_data['completed_bookings'];?><a class="pull-right" href="<?php echo base_url();?>enquiries/completed"><?php echo get_languageword('View');?></a></h2>
 				<p><?php echo get_languageword('Bookings Completd');?></p>
 			</div>
