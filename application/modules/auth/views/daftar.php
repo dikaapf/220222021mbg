@@ -122,7 +122,8 @@
 	    						<div class="col-sm-6 pad-right0">
 	    							<div class="dark-picker dark-picker-bright">
 									<?php 
-										$val = set_value('phone_code');
+										// $val = set_value('phone_code');
+										$val = set_value(62);
 										echo form_dropdown('phone_code', $country_opts, $val, 'id="phone_code" class="select-picker"');?>
 									</div>
 								</div>

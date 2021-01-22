@@ -54,12 +54,12 @@
                         </div>
                     </div>
 
-                    <!-- <div class="col-md-4 pad10">
-                        <div class="dash-block d-block5">
+                    <div class="col-md-4 pad10">
+                        <div class="dash-block d-block6">
                             <h2><?php echo $tutor_dashboard_data['running_bookings'];?><a class="pull-right" href="<?php echo base_url();?>student-enquiries/running"><?php echo get_languageword('view');?></a></h2>
                             <p><?php echo get_languageword('Booking Running');?></p>
                         </div>
-                    </div> -->
+                    </div>
                     
 
                     <?php } else { ?>
