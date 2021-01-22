@@ -36,7 +36,7 @@
                     <div class="col-md-4 pad10">
                         <div class="dash-block d-block3">
                             <h2><?php echo $tutor_dashboard_data['courses'];?><a class="pull-right" href="<?php echo base_url();?>tutor/manage-courses"><?php echo get_languageword('view');?></a></h2>
-                            <p><?php echo get_languageword('Total Tutoring Courses');?></p>
+                            <p><?php echo get_languageword('Pesanan_Disetujui');?></p>
                         </div>
                     </div>
 
