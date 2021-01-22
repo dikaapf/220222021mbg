@@ -13,7 +13,7 @@
 
                     <div class="col-md-4 pad10">
                         <div class="dash-block d-block1">
-                            <h2><?php echo $my_profile->net_credits;?></strong></h2>
+                            <h2><strong>Rp. <?php echo $my_profile->net_credits;?></strong></h2>
                             <p><?php echo get_languageword('Net Credits');?></p>
                         </div>
                     </div>
