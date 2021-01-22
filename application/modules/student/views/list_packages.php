@@ -12,6 +12,9 @@ if(count($package_data) > 0) {
 	<div class="custom_accordion1">
 		
 		<div class="row">
+		<p class="top20"><b><?php echo get_languageword('Biaya_Pesanan_Anda_:'); ?></b></p>
+		<br>
+		<p class="top20"><b><?php echo get_languageword('Atau_Topup_Saldo_:'); ?></b></p>
 			<div class="pricing-box-height">
 				<?php 
 				  foreach($package_data as $l) { ?>
@@ -90,7 +93,7 @@ if(count($package_data) > 0) {
 			{
 				if ( in_array( $gateway->type_slug, array( 'Web money' ) ) ) { // Let us check whether the payment gateway supports the currency
 					if ( $gateway->type_slug == 'Web money' ) {
-						if ( ! in_array( $system_currency, array( 'RUB', 'EUR', 'USD', 'UAH' ) ) ) { // Let us skip if the system not in the supported currency
+						if ( ! in_array( $system_currency, array( 'IDR', 'EUR', 'USD', 'UAH' ) ) ) { // Let us skip if the system not in the supported currency
 							continue;
 						}
 					}

@@ -303,7 +303,7 @@
                                     <img src="<?php echo $image;?>" alt="" class="comment-profile img-circle">
                                 </div>
                                 <div class="media-body">
-                                    <h4><strong><?php echo $review->student_name;?></strong> On <?php echo date("jS F, Y", strtotime($review->posted_on));?>
+                                    <h4><strong><?php echo $review->student_name;?></strong> Pada <?php echo date("j F, Y", strtotime($review->posted_on));?>
                                         <span class="avg_rating" <?php echo 'data-score='.$review->rating; ?> ></span>
                                     </h4>
                                     <p class="time-stamp"><strong><?php echo get_languageword('Course')?>:</strong><?php echo $review->course;?> </p>
