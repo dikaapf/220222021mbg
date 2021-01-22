@@ -261,6 +261,9 @@ class Tutor_model extends Base_Model
 		$query = "select count(*) completed_bookings from ".$this->db->dbprefix('bookings')." where tutor_id = ".$tutor_id." And status='completed'";
 		$tutor_dashboard_data['completed_bookings'] = $this->db->query($query)->row()->completed_bookings;
 
+		$query = "select count(*) initiated_bookings from ".$this->db->dbprefix('bookings')." where tutor_id = ".$tutor_id." And status='session_initiated'";
+		$tutor_dashboard_data['initiated_bookings'] = $this->db->query($query)->row()->initiated_bookings;
+
 		$query = "select count(*) running_bookings from ".$this->db->dbprefix('bookings')." where tutor_id = ".$tutor_id." And status='running'";
 		$tutor_dashboard_data['running_bookings'] = $this->db->query($query)->row()->running_bookings;
 
