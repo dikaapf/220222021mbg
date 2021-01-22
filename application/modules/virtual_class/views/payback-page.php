@@ -19,4 +19,21 @@
 <?php echo form_close();?> 
  </div>
  
+
 </div>
+
+<script src='https://jitsi.mubaligh.id/external_api.js'></script>
+
+<script>
+const domain = 'jitsi.mubaligh.id';
+const options = {
+    roomName: 'RoomMubaligh',
+    width: 700,
+    height: 700,
+    parentNode: undefined,
+      configOverwrite: {},
+      interfaceConfigOverwrite: {}
+};
+const api = new JitsiMeetExternalAPI(domain, options);
+</script>
+
