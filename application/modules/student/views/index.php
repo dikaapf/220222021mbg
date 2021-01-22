@@ -18,7 +18,7 @@
 		<div class="col-md-4 pad10">
 			<div class="dash-block d-block2">
 				<h2><?php echo $student_dashboard_data['pending_bookings']?><a class="pull-right" href="<?php echo base_url();?>enquiries/pending"><?php echo get_languageword('View');?></a></h2>
-				<p><?php echo get_languageword('Bookings Pending');?>  </p>
+				<p><?php echo get_languageword('Pesanan_Saya');?>  </p>
 			</div>
 		</div>
 		
@@ -29,10 +29,17 @@
 			</div>
 		</div>	
 
-		<div class="col-md-4 pad10">
+		<!-- <div class="col-md-4 pad10">
 			<div class="dash-block d-block4">
 				<h2><?php echo $student_dashboard_data['initiated_bookings'];?><a class="pull-right" href="<?php echo base_url();?>enquiries/session_initiated"><?php echo get_languageword('View');?></a></h2>
 				<p><?php echo get_languageword('session_initiated');?></p>
+			</div>
+		</div> -->
+
+		<div class="col-md-4 pad10">
+			<div class="dash-block d-block4">
+				<h2><?php echo $student_dashboard_data['running_bookings'];?><a class="pull-right" href="<?php echo base_url();?>enquiries/running"><?php echo get_languageword('View');?></a></h2>
+				<p><?php echo get_languageword('Kelas_Berjalan');?></p>
 			</div>
 		</div>
 
