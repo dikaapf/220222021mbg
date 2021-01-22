@@ -22,7 +22,7 @@
 
 </div>
 
-<script src='https://jitsi.mubaligh.id/external_api.js'></script>
+<!-- <script src='https://jitsi.mubaligh.id/external_api.js'></script>
 
 <script>
 const domain = 'jitsi.mubaligh.id';
@@ -35,5 +35,5 @@ const options = {
       interfaceConfigOverwrite: {}
 };
 const api = new JitsiMeetExternalAPI(domain, options);
-</script>
+</script> -->
 
