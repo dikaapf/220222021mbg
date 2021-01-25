@@ -275,11 +275,9 @@
                                             <textarea name="message" rows="8" placeholder="<?php echo get_languageword('Hello My name is Diana and') . '.....' ?>"><?php echo set_value('message'); ?></textarea>
                                             <?php echo form_error('message'); ?>
                                         </div>
-                                        <br>
                                         <h2 class="fee" id="fee"> </h2>
                                         <div class="feeperhour" id="duration"> </div>
                                         <div class="feeperhour" id="days_off"> </div>
-                                        <br>
                                         <button id="request_tutor_btn" class="btn btn-link-dark" name="Submit" type="Submit"><?php echo get_languageword('request_this_tutor'); ?></button>
                                     </div>
                                 </li>
