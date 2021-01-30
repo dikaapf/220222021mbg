@@ -5,7 +5,7 @@
 
 			<h5>
 				<strong>
-					<div class="text-left field-sorting <?php if (isset($order_by[0]) &&  $column->field_name == $order_by[0]) { ?><?php echo $order_by[1] ?><?php } ?>" rel='<?php echo $column->field_name ?>'>
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12  <?php if (isset($order_by[0]) &&  $column->field_name == $order_by[0]) { ?><?php echo $order_by[1] ?><?php } ?>" rel='<?php echo $column->field_name ?>'>
 						<?php echo $column->display_as ?>:
 					</div>
 				</strong>
@@ -14,12 +14,14 @@
 			<tr <?php if ($num_row % 2 == 1) { ?>class="erow" <?php } ?>>
 
 				<td width='<?php echo $column_width ?>%' class='<?php if (isset($order_by[0]) &&  $column->field_name == $order_by[0]) { ?>sorted<?php } ?>'>
-					<div class='text-left'><?php echo $row->{$column->field_name} != '' ? $row->{$column->field_name} : '&nbsp;'; ?></div>
+					<div class='right'><?php echo $row->{$column->field_name} != '' ? $row->{$column->field_name} : '&nbsp;'; ?></div>
 				</td>
 
 			</tr>
 		<?php } ?>
-		<div class="">
+
+
+		<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 col-lg-push-7 col-md-push-5 col-sm-push-5">
 
 			<?php if (!$unset_delete || !$unset_edit || !$unset_read || !empty($actions)) { ?>
 
