@@ -647,13 +647,14 @@ div.pGroup {
 {
 	background:url(images/edit.png) no-repeat;
 	cursor: pointer;
-	width: 16px;
-	height:16px;
-	float:right;
+	width: 50px;
+	height:30px;
+	float:none;
 	border: none !important;
 	padding:0px !important;
 	padding-bottom:0px !important;
-	margin-left:5px;
+	margin-left:0px;
+	margin-bottom: 5px;
 	display: block;
 }
 .flexigrid .delete-icon
@@ -673,13 +674,14 @@ div.pGroup {
 {
 	background:url(images/magnifier.png) no-repeat center;
 	cursor: pointer;
-	width: 16px;
-	height:16px;
-	float:right;
+	width: 50px;
+	height:30px;
+	float:none;
 	border: none !important;
 	padding:0px !important;
 	padding-bottom:0px !important;
 	margin-left:5px;
+	margin-bottom: 5px;
 	display: block;
 }
 .flexigrid .tools
