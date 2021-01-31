@@ -21,45 +21,53 @@
 		<?php } ?>
 
 
-		<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 col-lg-push-7 col-md-push-5 col-sm-push-5">
 
-			<?php if (!$unset_delete || !$unset_edit || !$unset_read || !empty($actions)) { ?>
+		<!-- tombol edit -->
+		<div class="col-lg-5 col-md-4 col-sm-4 col-xs-12 col-lg-push-7 col-md-push-5 col-sm-push-5">
+			<div class="send-quote-block text-center">
+				<?php if (!$unset_delete || !$unset_edit || !$unset_read || !empty($actions)) { ?>
 
-				<div class='tools'>
 					<?php if (!$unset_delete) { ?>
-						<a href='<?php echo $row->delete_url ?>' title='<?php echo $this->l('list_delete') ?> <?php echo $subject ?>' class="delete-row">
-							<span class='delete-icon'></span>
-						</a>
-					<?php } ?>
+						<div class='tools'><a href='<?php echo $row->delete_url ?>' title='<?php echo $this->l('list_delete') ?> <?php echo $subject ?>' class="delete-row">
+								<span class='delete-icon'></span>
+							</a>
+						</div>
+					<?php } ?> <br>
 					<?php if (!$unset_edit) { ?>
-						<a href='<?php echo $row->edit_url ?>' title='<?php echo $this->l('list_edit') ?> <?php echo $subject ?>' class="edit_button"><span class='edit-icon'></span></a>
-					<?php } ?>
-					<?php if (!$unset_read) { ?>
-						<a href='<?php echo $row->read_url ?>' title='<?php echo $this->l('list_view') ?> <?php echo $subject ?>' class="edit_button"><span class='read-icon'></span></a>
-					<?php } ?>
-					<?php
-					if (!empty($row->action_urls)) {
-						foreach ($row->action_urls as $action_unique_id => $action_url) {
-							$action = $actions[$action_unique_id];
-					?>
-							<a href="<?php echo $action_url; ?>" class="<?php echo $action->css_class; ?> crud-action" title="<?php echo $action->label ?>"><?php
-																																							if (!empty($action->image_url)) {
-																																							?><img src="<?php echo $action->image_url; ?>" alt="<?php echo $action->label ?>" /><?php
-																																																											}
-																																																												?></a>
-					<?php }
-					}
-					?>
-					<div class='clear'></div>
-				</div>
+						<div class='tools'><a href='<?php echo $row->edit_url ?>' title='<?php echo $this->l('list_edit') ?> <?php echo $subject ?>' class="btn-link-dark"><?php echo get_languageword('Edit'); ?></a>
+						<?php } ?>
+						</div><br>
 
-			<?php } ?>
+						<?php if (!$unset_read) { ?>
+							<div class='tools'><a href='<?php echo $row->read_url ?>' title='<?php echo $this->l('list_view') ?> <?php echo $subject ?>' class="btn-link-dark"><?php echo get_languageword('View Details'); ?></a>
+							<?php } ?>
+							</div><br>
+							<?php
+							if (!empty($row->action_urls)) {
+								foreach ($row->action_urls as $action_unique_id => $action_url) {
+									$action = $actions[$action_unique_id];
+							?>
+									<a href="<?php echo $action_url; ?>" class="<?php echo $action->css_class; ?> crud-action" title="<?php echo $action->label ?>"><?php
+																																									if (!empty($action->image_url)) {
+																																									?><img src="<?php echo $action->image_url; ?>" alt="<?php echo $action->label ?>" /><?php
+																																																													}
+																																																														?></a>
+							<?php }
+							}
+							?>
+							<div class='clear'></div>
 
+
+
+						<?php } ?>
+
+
+			</div>
 		</div>
 
 
 
-
+		<!-- tombol edit ends -->
 
 	</div>
 <?php } ?>
