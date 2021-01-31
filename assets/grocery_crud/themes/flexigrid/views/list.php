@@ -5,7 +5,7 @@
 
 			<h5>
 				<strong>
-					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12  <?php if (isset($order_by[0]) &&  $column->field_name == $order_by[0]) { ?><?php echo $order_by[1] ?><?php } ?>" rel='<?php echo $column->field_name ?>'>
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-5  <?php if (isset($order_by[0]) &&  $column->field_name == $order_by[0]) { ?><?php echo $order_by[1] ?><?php } ?>" rel='<?php echo $column->field_name ?>'>
 						<?php echo $column->display_as ?>:
 					</div>
 				</strong>
@@ -71,12 +71,16 @@
 <?php } ?>
 <!-- Dashboard panel ends -->
 
-<?php
 
-$column_width = (int)(80 / count($columns));
 
-if (!empty($list)) {
-?><div class="bDiv">
+
+<!-- menonaktifkan tampilan tabel -->
+<!-- <?php
+
+		$column_width = (int)(80 / count($columns));
+
+		if (!empty($list)) {
+		?><div class="bDiv">
 
 		<table cellspacing="0" cellpadding="0" border="0" id="flex1">
 			<thead>
@@ -140,7 +144,7 @@ if (!empty($list)) {
 				<?php } ?>
 			</tbody>
 		</table>
-	</div>
+	</div>-->
 <?php } else { ?>
 	<br />
 	&nbsp;&nbsp;&nbsp;&nbsp; <?php echo $this->l('list_no_items'); ?>
