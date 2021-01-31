@@ -28,9 +28,7 @@
 				<?php if (!$unset_delete || !$unset_edit || !$unset_read || !empty($actions)) { ?>
 
 					<?php if (!$unset_delete) { ?>
-						<div class='tools'><a href='<?php echo $row->delete_url ?>' title='<?php echo $this->l('list_delete') ?> <?php echo $subject ?>' class="delete-row">
-								<span class='delete-icon'></span>
-							</a>
+						<div class='tools'><a href='<?php echo $row->delete_url ?>' title='<?php echo $this->l('list_delete') ?> <?php echo $subject ?>' class="btn-link-dark"><?php echo get_languageword('Delete'); ?></a>
 						</div>
 					<?php } ?> <br>
 					<?php if (!$unset_edit) { ?>
