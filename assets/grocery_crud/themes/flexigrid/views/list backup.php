@@ -1,10 +1,9 @@
 <!-- Dashboard panel -->
 <?php foreach ($list as $num_row => $row) { ?>
-	<div class="box-border">
-            <div class="row ">
+	<div class="row">
 				<!-- Kolom Kiri -->
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 no-padright">
-					<div class="dashboard1-panel">
+					<div class="dashboard-panel">
 						<?php foreach ($columns as $column) { ?>
 
 							<h5>
@@ -24,13 +23,9 @@
 							</tr>
 						<?php } ?>
 
-						
-					</div>	
-				</div>
-				<!-- Kolom Kiri ends -->
-				
-				<div class="dashboard2-panel">
-                    <div class="text-center">
+						<!-- tombol edit -->
+						<div class="col-lg-5 col-md-4 col-sm-4 col-xs-12 col-lg-push-7 col-md-push-5 col-sm-push-5">
+							<div class="text-center">
 								<?php if (!$unset_delete || !$unset_edit || !$unset_read || !empty($actions)) { ?>
 
 									<?php if (!$unset_delete) { ?>
@@ -62,10 +57,18 @@
 											<div class='clear'></div>
 
 										<?php } ?>
-					</div>
-				</div>
 
-			</div>
+
+							</div>
+						</div>
+
+
+
+						<!-- tombol edit ends -->
+					</div>	
+				</div>
+				<!-- Kolom Kiri ends -->
+
 	</div>
 <?php } ?>
 <!-- Dashboard panel ends -->

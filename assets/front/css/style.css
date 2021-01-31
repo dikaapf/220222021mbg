@@ -4264,6 +4264,25 @@ ul.photos-crud {
   margin-bottom: 30px;
 }
 
+.dashboard1-panel {
+  border: 1px solid #e5e5e5;
+  background: #fdfdfd;
+  border-radius: 5px;
+  padding: 30px;
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+.dashboard2-panel {
+  border-radius: 5px; 
+  padding: 50px;
+  position: relative;
+  float: right;
+  width: 33%;
+  margin-bottom: 30px;
+}
+
 .dashboard-list li {
   color: #a696a4;
   font-size: 14px;
