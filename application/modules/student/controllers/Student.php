@@ -955,7 +955,7 @@ class Student extends MY_Controller
 			$this->prepare_flashmessage(get_languageword('You dont have permission to access this page'), 1);
 			redirect('auth/login', 'refresh');
 		}
-		$this->prepare_flashmessage(get_languageword("Assalamualikum Wr. Wb. Terima kasih atas kepercayaan Anda menggunakan layanan platform Mubaligh.id. <br> Segera selesaikan pembayaran sesuai nilai Top Up anda melalui transfer ke rekening Bank Syariah Indonesia (kode bank) 8888888888888 an PT Mubaligh Teknologi Indonesia dan lakukan konfirmasi via whatsapp ke nomor 08976346370."), 2);
+		$this->prepare_flashmessage(get_languageword("Segera selesaikan pembayaran sesuai nilai Top Up anda melalui transfer ke rekening Bank Syariah Indonesia (kode bank) 8888888888888 an PT Mubaligh Teknologi Indonesia dan lakukan konfirmasi via whatsapp ke nomor 08976346370."), 2);
 
 		$this->data['message'] = $this->session->flashdata('message');
 		
