@@ -2254,8 +2254,8 @@ class Tutor extends MY_Controller
 
 		$user_id = $this->ion_auth->get_user_id();
 
-		$this->load->library(array('grocery2_CRUD_extended'));
-		$crud = new grocery2_CRUD_extended();
+		$this->load->library(array('grocery_CRUD_extended'));
+		$crud = new grocery_CRUD_extended();
 		$crud_state = $crud->getState();
 
 		$crud->set_table($this->db->dbprefix('admin_money_transactions'));
