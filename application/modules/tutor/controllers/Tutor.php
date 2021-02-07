@@ -1704,7 +1704,8 @@ class Tutor extends MY_Controller
 		$crud->unset_delete();
 
 		//List Table Columns
-		$crud->columns('student_id', 'course_id', 'course_duration', 'fee', 'admin_commission_val','content', 'start_date', 'time_slot', 'preferred_location', 'status', 'payment_status');
+		// $crud->columns('student_id', 'course_id', 'course_duration', 'fee', 'admin_commission_val','content', 'start_date', 'time_slot', 'preferred_location', 'status', 'payment_status');
+		$crud->columns('student_id', 'course_id', 'course_duration', 'start_date', 'time_slot', 'preferred_location', 'status', 'payment_status');
 		if( $param == 'session_initiated' || $param == 'running' ) {
 			$crud->add_action(get_languageword('join'), '', '', 'fa fa-mixcloud', array($this, 'join_link') );
 			
