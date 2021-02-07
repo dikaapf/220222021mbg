@@ -540,8 +540,8 @@ class Tutor extends MY_Controller
 		$this->data['message'] = $this->session->flashdata('message');
 
 		$user_id = $this->ion_auth->get_user_id();
-		$this->load->library(array('grocery_CRUD'));
-		$crud = new grocery_CRUD();
+		$this->load->library(array('grocery2_CRUD'));
+		$crud = new grocery2_CRUD();
 		$crud_state = $crud->getState();
 		$crud->set_table(TBL_TUTOR_COURSES);
 		$crud->set_relation('course_id',TBL_CATEGORIES, 'name');
@@ -840,8 +840,8 @@ class Tutor extends MY_Controller
 		$this->data['message'] = $this->session->flashdata('message');
 
 		$user_id = $this->ion_auth->get_user_id();
-		$this->load->library(array('grocery_CRUD'));
-		$crud = new grocery_CRUD();
+		$this->load->library(array('grocery2_CRUD'));
+		$crud = new grocery2_CRUD();
 		$crud_state = $crud->getState();
 		$crud->set_table($this->db->dbprefix('subscriptions'));
 		$crud->where('user_id', $user_id);
@@ -936,8 +936,8 @@ class Tutor extends MY_Controller
 
 			$this->data['message'] = $this->session->flashdata('message');
 
-			$this->load->library(array('grocery_CRUD'));
-			$crud = new grocery_CRUD();
+			$this->load->library(array('grocery2_CRUD'));
+			$crud = new grocery2_CRUD();
 			$crud_state = $crud->getState();
 			$crud->set_table($this->db->dbprefix('inst_batches'));
 			$crud->where('tutor_id', $user_id);
@@ -1392,8 +1392,8 @@ class Tutor extends MY_Controller
 				redirect('auth/login', 'refresh');
 			}
 
-			$this->load->library(array('grocery_CRUD'));
-			$crud = new grocery_CRUD();
+			$this->load->library(array('grocery2_CRUD'));
+			$crud = new grocery2_CRUD();
 			$crud_state = $crud->getState();
 			$crud->set_table($this->db->dbprefix('inst_enrolled_students'));
 			$crud->where('batch_id', $batch_id);
@@ -1634,8 +1634,8 @@ class Tutor extends MY_Controller
 			redirect(URL_TUTOR_INDEX);
 		}
 
-		$this->load->library(array('grocery_CRUD'));
-		$crud = new grocery_CRUD();
+		$this->load->library(array('grocery2_CRUD'));
+		$crud = new grocery2_CRUD();
 		$crud_state = $crud->getState();
 		$crud->set_table($this->db->dbprefix('tutor_reviews'));
 		$crud->where('tutor_id', $tutor_id);
@@ -1683,8 +1683,8 @@ class Tutor extends MY_Controller
 		$this->data['message'] = $this->session->flashdata('message');
 
 		$user_id = $this->ion_auth->get_user_id();
-		$this->load->library(array('grocery_CRUD'));
-		$crud = new grocery_CRUD();
+		$this->load->library(array('grocery2_CRUD'));
+		$crud = new grocery2_CRUD();
 		$crud_state = $crud->getState();
 		$crud->set_table(TBL_BOOKINGS);
 		$crud->set_relation('student_id',TBL_USERS, 'username');
@@ -2216,8 +2216,8 @@ class Tutor extends MY_Controller
 		}
 
 		$tutor_id = $this->ion_auth->get_user_id();
-		$this->load->library(array('grocery_CRUD'));
-		$crud = new grocery_CRUD();
+		$this->load->library(array('grocery2_CRUD'));
+		$crud = new grocery2_CRUD();
 		$crud_state = $crud->getState();
 		$crud->set_table($this->db->dbprefix('user_credit_transactions'));
 		$crud->where('user_id', $tutor_id);
@@ -2253,8 +2253,8 @@ class Tutor extends MY_Controller
 
 		$user_id = $this->ion_auth->get_user_id();
 
-		$this->load->library(array('grocery_CRUD_extended'));
-		$crud = new grocery_CRUD_extended();
+		$this->load->library(array('grocery2_CRUD_extended'));
+		$crud = new grocery2_CRUD_extended();
 		$crud_state = $crud->getState();
 
 		$crud->set_table($this->db->dbprefix('admin_money_transactions'));
@@ -2891,8 +2891,8 @@ class Tutor extends MY_Controller
 
 
 
-		$this->load->library(array('grocery_CRUD'));
-		$crud = new grocery_CRUD();
+		$this->load->library(array('grocery2_CRUD'));
+		$crud = new grocery2_CRUD();
 		$crud_state = $crud->getState();
 		$crud->set_table($this->db->dbprefix('tutor_selling_courses'));
 
@@ -3096,8 +3096,8 @@ class Tutor extends MY_Controller
 
 		$tutor_id = $this->ion_auth->get_user_id();
 
-		$this->load->library(array('grocery_CRUD'));
-		$crud = new grocery_CRUD();
+		$this->load->library(array('grocery2_CRUD'));
+		$crud = new grocery2_CRUD();
 		$crud_state = $crud->getState();
 		$crud->set_table(TBL_PREFIX.'course_purchases');
 		$crud->set_relation('sc_id',TBL_PREFIX.'tutor_selling_courses','course_title');
