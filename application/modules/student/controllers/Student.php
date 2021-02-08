@@ -2099,6 +2099,9 @@ class Student extends MY_Controller
 						$inputdata['payment_updated_user_message'] = $this->input->post('payment_updated_user_message');
 						$this->base_model->update_operation($inputdata, 'subscriptions', array('id' => $payment_id));
 						$this->prepare_flashmessage(get_languageword('record updated successfully'), 0);
+						//sendEmail($from,$to,$subject,$msg)
+						sendEmail( 'mubaligh.id@gmail.com', 'mubaligh.id@gmail.com', 'Status Order', 'Pesan Order' );							
+
 						redirect('student/mysubscriptions');
 					}
 				}
