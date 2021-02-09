@@ -252,25 +252,25 @@ class Tutor_model extends Base_Model
 
 		 $tutor_dashboard_data = array();
 
-		$query = "select count(*) total_bookings from ".$this->db->dbprefix('bookings')." where tutor_id = ".$tutor_id;
+		$query = "select count(*) total_bookings from ".$this->db->dbprefix('bookings')." where tutor_id =".$tutor_id . " order by created_at desc";
 		$tutor_dashboard_data['total_bookings'] = $this->db->query($query)->row()->total_bookings;
 
-		$query = "select count(*) pending_bookings from ".$this->db->dbprefix('bookings')." where tutor_id = ".$tutor_id." And status='pending'";
+		$query = "select count(*) pending_bookings from ".$this->db->dbprefix('bookings')." where tutor_id =".$tutor_id." And status='pending' order by created_at desc";
 		$tutor_dashboard_data['pending_bookings'] = $this->db->query($query)->row()->pending_bookings;
 
-		$query = "select count(*) completed_bookings from ".$this->db->dbprefix('bookings')." where tutor_id = ".$tutor_id." And status='completed'";
+		$query = "select count(*) completed_bookings from ".$this->db->dbprefix('bookings')." where tutor_id =".$tutor_id." And status='completed' order by created_at desc";
 		$tutor_dashboard_data['completed_bookings'] = $this->db->query($query)->row()->completed_bookings;
 
-		$query = "select count(*) initiated_bookings from ".$this->db->dbprefix('bookings')." where tutor_id = ".$tutor_id." And status='session_initiated'";
+		$query = "select count(*) initiated_bookings from ".$this->db->dbprefix('bookings')." where tutor_id =".$tutor_id." And status='session_initiated' order by created_at desc";
 		$tutor_dashboard_data['initiated_bookings'] = $this->db->query($query)->row()->initiated_bookings;
 
-		$query = "select count(*) running_bookings from ".$this->db->dbprefix('bookings')." where tutor_id = ".$tutor_id." And status='running'";
+		$query = "select count(*) running_bookings from ".$this->db->dbprefix('bookings')." where tutor_id =".$tutor_id." And status='running' order by created_at desc";
 		$tutor_dashboard_data['running_bookings'] = $this->db->query($query)->row()->running_bookings;
 
-		$query = "select count(*) approved_bookings from ".$this->db->dbprefix('bookings')." where tutor_id = ".$tutor_id." And status='approved'";
+		$query = "select count(*) approved_bookings from ".$this->db->dbprefix('bookings')." where tutor_id =".$tutor_id." And status='approved' order by created_at desc";
 		$tutor_dashboard_data['approved_bookings'] = $this->db->query($query)->row()->approved_bookings;
 
-		$query = "select count(*) courses from ".$this->db->dbprefix('tutor_courses')." where tutor_id = ".$tutor_id;
+		$query = "select count(*) courses from ".$this->db->dbprefix('tutor_courses')." where tutor_id =".$tutor_id . " order by created_at desc";
 		$tutor_dashboard_data['courses'] = $this->db->query($query)->row()->courses;
 
 		return $tutor_dashboard_data;
