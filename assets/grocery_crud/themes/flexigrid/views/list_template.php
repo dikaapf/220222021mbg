@@ -117,76 +117,75 @@ $this->load_js_jqueryui();
 		</div>
 
 
-		<!-- menonaktifkan_kolom_page
-		
-		 <div class="pDiv">
-		<div class="pDiv2">
-			<div class="pGroup">
-				<span class="pcontrol">
-					<?php list($show_lang_string, $entries_lang_string) = explode('{paging}', $this->l('list_show_entries')); ?>
-					<?php echo $show_lang_string; ?>
-					<select name="per_page" id='per_page' class="per_page">
-						<?php foreach ($paging_options as $option) { ?>
-							<option value="<?php echo $option; ?>" <?php if ($option == $default_per_page) { ?>selected="selected"<?php } ?>><?php echo $option; ?>&nbsp;&nbsp;</option>
-						<?php } ?>
-					</select>
-					<?php echo $entries_lang_string; ?>
-					<input type='hidden' name='order_by[0]' id='hidden-sorting' class='hidden-sorting' value='<?php if (!empty($order_by[0])) { ?><?php echo $order_by[0] ?><?php } ?>' />
-					<input type='hidden' name='order_by[1]' id='hidden-ordering' class='hidden-ordering'  value='<?php if (!empty($order_by[1])) { ?><?php echo $order_by[1] ?><?php } ?>'/>
-				</span>
-			</div>
-			<div class="btnseparator">
-			</div>
-			<div class="pGroup">
-				<div class="pFirst pButton first-button">
-					<span></span>
+
+		<div class="pDiv">
+			<div class="pDiv2">
+				<div class="pGroup">
+					<span class="pcontrol">
+						<?php list($show_lang_string, $entries_lang_string) = explode('{paging}', $this->l('list_show_entries')); ?>
+						<?php echo $show_lang_string; ?>
+						<select name="per_page" id='per_page' class="per_page">
+							<?php foreach ($paging_options as $option) { ?>
+								<option value="<?php echo $option; ?>" <?php if ($option == $default_per_page) { ?>selected="selected" <?php } ?>><?php echo $option; ?>&nbsp;&nbsp;</option>
+							<?php } ?>
+						</select>
+						<?php echo $entries_lang_string; ?>
+						<input type='hidden' name='order_by[0]' id='hidden-sorting' class='hidden-sorting' value='<?php if (!empty($order_by[0])) { ?><?php echo $order_by[0] ?><?php } ?>' />
+						<input type='hidden' name='order_by[1]' id='hidden-ordering' class='hidden-ordering' value='<?php if (!empty($order_by[1])) { ?><?php echo $order_by[1] ?><?php } ?>' />
+					</span>
 				</div>
-				<div class="pPrev pButton prev-button">
-					<span></span>
+				<div class="btnseparator">
+				</div>
+				<div class="pGroup">
+					<div class="pFirst pButton first-button">
+						<span></span>
+					</div>
+					<div class="pPrev pButton prev-button">
+						<span></span>
+					</div>
+				</div>
+				<div class="btnseparator">
+				</div>
+				<div class="pGroup">
+					<span class="pcontrol"><?php echo $this->l('list_page'); ?> <input name='page' type="text" value="1" size="4" id='crud_page' class="crud_page">
+						<?php echo $this->l('list_paging_of'); ?>
+						<span id='last-page-number' class="last-page-number"><?php echo ceil($total_results / $default_per_page) ?></span></span>
+				</div>
+				<div class="btnseparator">
+				</div>
+				<div class="pGroup">
+					<div class="pNext pButton next-button">
+						<span></span>
+					</div>
+					<div class="pLast pButton last-button">
+						<span></span>
+					</div>
+				</div>
+				<div class="btnseparator">
+				</div>
+				<div class="pGroup">
+					<div class="pReload pButton ajax_refresh_and_loading" id='ajax_refresh_and_loading'>
+						<span></span>
+					</div>
+				</div>
+				<div class="btnseparator">
+				</div>
+				<div class="pGroup">
+					<span class="pPageStat">
+						<?php $paging_starts_from = "<span id='page-starts-from' class='page-starts-from'>1</span>"; ?>
+						<?php $paging_ends_to = "<span id='page-ends-to' class='page-ends-to'>" . ($total_results < $default_per_page ? $total_results : $default_per_page) . "</span>"; ?>
+						<?php $paging_total_results = "<span id='total_items' class='total_items'>$total_results</span>" ?>
+						<?php echo str_replace(
+							array('{start}', '{end}', '{results}'),
+							array($paging_starts_from, $paging_ends_to, $paging_total_results),
+							$this->l('list_displaying')
+						); ?>
+					</span>
 				</div>
 			</div>
-			<div class="btnseparator">
-			</div>
-			<div class="pGroup">
-				<span class="pcontrol"><?php echo $this->l('list_page'); ?> <input name='page' type="text" value="1" size="4" id='crud_page' class="crud_page">
-				<?php echo $this->l('list_paging_of'); ?>
-				<span id='last-page-number' class="last-page-number"><?php echo ceil($total_results / $default_per_page) ?></span></span>
-			</div>
-			<div class="btnseparator">
-			</div>
-			<div class="pGroup">
-				<div class="pNext pButton next-button" >
-					<span></span>
-				</div>
-				<div class="pLast pButton last-button">
-					<span></span>
-				</div>
-			</div>
-			<div class="btnseparator">
-			</div>
-			<div class="pGroup">
-				<div class="pReload pButton ajax_refresh_and_loading" id='ajax_refresh_and_loading'>
-					<span></span>
-				</div>
-			</div>
-			<div class="btnseparator">
-			</div>
-			<div class="pGroup">
-				<span class="pPageStat">
-					<?php $paging_starts_from = "<span id='page-starts-from' class='page-starts-from'>1</span>"; ?>
-					<?php $paging_ends_to = "<span id='page-ends-to' class='page-ends-to'>" . ($total_results < $default_per_page ? $total_results : $default_per_page) . "</span>"; ?>
-					<?php $paging_total_results = "<span id='total_items' class='total_items'>$total_results</span>" ?>
-					<?php echo str_replace(
-						array('{start}', '{end}', '{results}'),
-						array($paging_starts_from, $paging_ends_to, $paging_total_results),
-						$this->l('list_displaying')
-					); ?>
-				</span>
+			<div style="clear: both;">
 			</div>
 		</div>
-		<div style="clear: both;">
-		</div> -->
+		<?php echo form_close(); ?>
 	</div>
-	<?php echo form_close(); ?>
-</div>
 </div>
