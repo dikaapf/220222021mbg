@@ -260,31 +260,31 @@ class Student_model extends CI_Model
 
 		 $student_dashboard_data = array();
 
-		$query = "select count(*) total_bookings from ".$this->db->dbprefix('bookings')." where student_id = ".$student_id;
+		$query = "select count(*) total_bookings from ".$this->db->dbprefix('bookings')." where student_id =".$student_id ." order by created_at desc";
 		$student_dashboard_data['total_bookings'] = $this->db->query($query)->row()->total_bookings;
 
-		$query = "select count(*) pending_bookings from ".$this->db->dbprefix('bookings')." where student_id = ".$student_id." And status='pending'";
+		$query = "select count(*) pending_bookings from ".$this->db->dbprefix('bookings')." where student_id =".$student_id." And status='pending' order by created_at desc";
 		$student_dashboard_data['pending_bookings'] = $this->db->query($query)->row()->pending_bookings;
 
-		$query = "select count(*) completed_bookings from ".$this->db->dbprefix('bookings')." where student_id = ".$student_id." And status='completed'";
+		$query = "select count(*) completed_bookings from ".$this->db->dbprefix('bookings')." where student_id =".$student_id." And status='completed' order by created_at desc";
 		$student_dashboard_data['completed_bookings'] = $this->db->query($query)->row()->completed_bookings;
 
-		$query = "select count(*) approved_bookings from ".$this->db->dbprefix('bookings')." where student_id = ".$student_id." And status='approved'";
+		$query = "select count(*) approved_bookings from ".$this->db->dbprefix('bookings')." where student_id =".$student_id." And status='approved' order by created_at desc";
 		$student_dashboard_data['approved_bookings'] = $this->db->query($query)->row()->approved_bookings;
 
-		$query = "select count(*) initiated_bookings from ".$this->db->dbprefix('bookings')." where student_id = ".$student_id." And status='session_initiated'";
+		$query = "select count(*) initiated_bookings from ".$this->db->dbprefix('bookings')." where student_id =".$student_id." And status='session_initiated' order by created_at desc";
 		$student_dashboard_data['initiated_bookings'] = $this->db->query($query)->row()->initiated_bookings;
 
-		$query = "select count(*) running_bookings from ".$this->db->dbprefix('bookings')." where student_id = ".$student_id." And status='running'";
+		$query = "select count(*) running_bookings from ".$this->db->dbprefix('bookings')." where student_id =".$student_id." And status='running' order by created_at desc";
 		$student_dashboard_data['running_bookings'] = $this->db->query($query)->row()->running_bookings;
 
-		$query = "select count(*) open_leads from ".$this->db->dbprefix('student_leads')." where user_id = ".$student_id." And status='Opened'";
+		$query = "select count(*) open_leads from ".$this->db->dbprefix('student_leads')." where user_id =".$student_id." And status='Opened' order by created_at desc";
 		$student_dashboard_data['open_leads'] = $this->db->query($query)->row()->open_leads;
 
-		$query = "select count(*) closed_leads from ".$this->db->dbprefix('student_leads')." where user_id = ".$student_id." And status='Closed'";
+		$query = "select count(*) closed_leads from ".$this->db->dbprefix('student_leads')." where user_id =".$student_id." And status='Closed' order by created_at desc";
 		$student_dashboard_data['closed_leads'] = $this->db->query($query)->row()->closed_leads;
 
-		$query = "select count(*) inst_enrolled from ".$this->db->dbprefix('inst_enrolled_students')." where student_id = ".$student_id;
+		$query = "select count(*) inst_enrolled from ".$this->db->dbprefix('inst_enrolled_students')." where student_id =".$student_id . " order by created_at desc";
 		$student_dashboard_data['inst_enrolled'] = $this->db->query($query)->row()->inst_enrolled;
 
 		return $student_dashboard_data;
