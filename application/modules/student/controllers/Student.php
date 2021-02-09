@@ -2100,8 +2100,50 @@ class Student extends MY_Controller
 						$this->base_model->update_operation($inputdata, 'subscriptions', array('id' => $payment_id));
 						$this->prepare_flashmessage(get_languageword('record updated successfully'), 0);
 						//sendEmail($from,$to,$subject,$msg)
-						sendEmail( 'mubaligh.id@gmail.com', 'mubaligh.id@gmail.com', 'Status Order', 'Pesan Order' );							
+						//sendEmail( 'mubaligh.id@gmail.com', 'mubaligh.id@gmail.com', 'Status Order', 'Pesan Order' );							
+						$student_id 		= $this->ion_auth->get_user_id();
+			//Email Alert to Student - Start
+			//Get Top Up Payment Email Template
+			$email_tpl = $this->base_model->fetch_records_from('email_templates', array('template_status' => 'Active', 'email_template_id' => '19'));
 
+			if (!empty($email_tpl)) {
+
+				$email_tpl = $email_tpl[0];
+
+				$student_rec = getUserRec($student_id);
+
+
+				if (!empty($email_tpl->from_email)) {
+
+					$from = $email_tpl->from_email;
+				} else {
+
+					$from 	= get_system_settings('Portal_Email');
+				}
+
+				$to 	= $student_rec->email;
+				if (!empty($email_tpl->template_subject)) {
+
+					$sub = $email_tpl->template_subject;
+				} else {
+
+					$sub = get_languageword("Top Up Payment");
+				}
+
+				if (!empty($email_tpl->template_content)) {
+
+					$original_vars  = array($student_rec->username , '<a href="' . URL_AUTH_LOGIN . '">' . get_languageword('Login Here') . '</a>');
+					$temp_vars		= array('___STUDENT_NAME___', '___LOGINLINK___');
+					$msg = str_replace($temp_vars, $original_vars, $email_tpl->template_content);
+				} else {
+
+					$msg = get_languageword('please') . " <a href='" . URL_AUTH_LOGIN . "'> " . get_languageword('Login Here') . "</a> " . get_languageword('to view the booking details');
+					$msg .= "<p>" . get_languageword('Thank you') . "</p>";
+				}
+
+				sendEmail($from, $to, $sub, $msg);
+			}
+			//Email Alert to Tutor - End
 						redirect('student/mysubscriptions');
 					}
 				}
