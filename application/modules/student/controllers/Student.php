@@ -2056,8 +2056,8 @@ class Student extends MY_Controller
 		}
 
 		$student_id = $this->ion_auth->get_user_id();
-		$this->load->library(array('grocery2_CRUD'));
-		$crud = new grocery2_CRUD();
+		$this->load->library(array('grocery_CRUD'));
+		$crud = new grocery_CRUD();
 		$crud_state = $crud->getState();
 		$crud->set_table($this->db->dbprefix('user_credit_transactions'));
 		$crud->where('user_id', $student_id);
