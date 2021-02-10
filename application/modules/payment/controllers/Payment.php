@@ -366,7 +366,8 @@ class Payment extends MY_Controller
 						$url = base_url() . 'student/paywith_razorpay/package/'.$package_id.'/gateway/'.RAZORPAY_PAYMENT_GATEWAY;
 						redirect( $url );
 					}elseif ( $gateway_details[0]->type_id == MANUAL_TRANSFER ) {
-$student_id 		= $this->ion_auth->get_user_id();
+						//memulai notifikasi ke user saat topup payment
+					$student_id 		= $this->ion_auth->get_user_id();
 			//Email Alert to Student - Start
 			//Get Top Up Payment Email Template
 			$email_tpl = $this->base_model->fetch_records_from('email_templates', array('template_status' => 'Active', 'email_template_id' => '19'));
@@ -397,8 +398,8 @@ $student_id 		= $this->ion_auth->get_user_id();
 
 				if (!empty($email_tpl->template_content)) {
 
-					$original_vars  = array($student_rec->username , '<a href="' . URL_AUTH_LOGIN . '">' . get_languageword('Login Here') . '</a>');
-					$temp_vars		= array('___STUDENT_NAME___', '___LOGINLINK___');
+					$original_vars  = array($student_rec->username );
+					$temp_vars		= array('___FIRST_NAME___');
 					$msg = str_replace($temp_vars, $original_vars, $email_tpl->template_content);
 				} else {
 
@@ -406,7 +407,7 @@ $student_id 		= $this->ion_auth->get_user_id();
 					$msg .= "<p>" . get_languageword('Thank you') . "</p>";
 				}
 
-				sendEmail($from, $to, $sub, $msg);
+				sendEmail('MUBALIGH.ID', $to, $sub, $msg);
 			}
 			//Email Alert to Tutor - End					    
 						
