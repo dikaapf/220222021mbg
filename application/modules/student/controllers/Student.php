@@ -2083,7 +2083,6 @@ class Student extends MY_Controller
 
 	function manual_payment_status($payment_id)
 	{
-		die('ok');
 		$this->data['message'] = $this->session->flashdata('message');
 		if (!empty($payment_id)) {
 			$check = $this->db->query('SELECT * FROM `' . $this->db->dbprefix('subscriptions') . '` s INNER JOIN `' . $this->db->dbprefix('users') . '` u ON s.user_id = u.id AND u.active = 1 AND s.payment_received = 0 WHERE s.id = ' . $payment_id . ' AND u.id = ' . $this->ion_auth->get_user_id())->result();
