@@ -694,6 +694,26 @@ div.pGroup {
 	margin-bottom: 5px;
 	display: block;
 }
+
+.flexigrid .online-icon
+{
+	background:url(images/icon-mini.png) no-repeat center;
+	/* testing gantigambar */
+	/* width: 50px;
+	height:30px; */
+	width: 30px;
+	height:30px;
+	/* float:none; */
+	float:right;
+	border: none !important;
+	padding:0px !important;
+	padding-bottom:0px !important;
+	/* margin-left:0px; */
+	margin-left: 15px;
+	margin-bottom: 5px;
+	display: block;
+}
+
 .flexigrid .tools
 {
 	white-space: nowrap;
@@ -831,6 +851,18 @@ div.flexigrid a:hover
     padding: 0px;
     margin-right: 3px;
 }
+
+.online-action
+{
+	background:url(images/icon-mini.png) no-repeat center;
+	float: none;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+    margin-right: 3px;
+}
+
 .readonly_label
 {
 	padding-top:7px; color:#848484;

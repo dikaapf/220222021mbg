@@ -19,6 +19,17 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.fa-online {
+  background:url(images/icon-mini.png) no-repeat center;
+	float: none;
+  margin-left: 5px;
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  margin-right: 3px;
+}
+
 /* makes the font 33% larger relative to the icon container */
 .fa-lg {
   font-size: 1.33333333em;

@@ -1414,7 +1414,7 @@ class Student extends MY_Controller
 		$crud->columns('course_id', 'tutor_id', 'course_duration', 'start_date', 'time_slot', 'preferred_location', 'status');
 
 		if ($param == 'session_initiated' || $param == 'running') {
-			$crud->add_action(get_languageword('join'), '', '', 'fa fa-mixcloud', array($this, 'join_link'));
+			$crud->add_action(get_languageword('join'), '', '', 'fa online-action', array($this, 'join_link'));
 		}
 
 		$crud->callback_column('course_duration', array($this, '_callback_course_duration'));
