@@ -18,8 +18,10 @@ class Payment extends MY_Controller
 	/** Displays the Index Page**/
 	function index()
 	{
+	   
 		if(isset($_POST['Submit']))
 		{
+		     
 			$this->form_validation->set_rules('package_id', get_languageword('package'), 'trim|required|xss_clean');
 			$this->form_validation->set_rules('gateway_id', get_languageword('Payment gateway'), 'trim|required|xss_clean');			
 			$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
@@ -32,10 +34,13 @@ class Payment extends MY_Controller
 				$gateway_details = $this->base_model->get_payment_gateways(' AND st2.type_id = '.$gateway_id);
 				
 				$package_info 	= $this->db->get_where('packages',array('id' => $package_id))->result();
+				
 				if(count($gateway_details) > 0 && count($package_info) > 0)
 				{
+				    
 					$field_values = $this->db->get_where('system_settings_fields',array('type_id' => $gateway_id))->result();
 					$total_amount 	= $package_info[0]->package_cost;
+					
 					if(isset($package_info[0]->discount) && ($package_info[0]->discount != 0))
 					{
 						if($package_info[0]->discount_type == 'Value')
@@ -52,8 +57,10 @@ class Payment extends MY_Controller
 					$this->session->set_userdata( 'is_valid_request', 1 );
 					$this->session->set_userdata( 'package_id', $package_id );
 					$this->session->set_userdata( 'gateway_id', $gateway_id );
+					
 					if($gateway_details[0]->type_id == PAYPAL_PAYMENT_GATEWAY ) //Paypal Settings
 					{
+					    
 						$config['return'] 				= base_url().'payment/paypal_success';
 						$config['cancel_return'] 		= base_url().'payment/paypal_cancel';
 						$config['production'] 	= true;
@@ -81,6 +88,7 @@ class Payment extends MY_Controller
 					}
 					elseif($gateway_details[0]->type_id == PAYU_PAYMENT_GATEWAY ) //Payu Settings
 					{
+					    
 						$payuparams = array();
 						$MERCHANT_KEY = $SALT = $account_type = '';
 						$PAYU_BASE_URL = 'https://test.payu.in';
@@ -138,6 +146,7 @@ class Payment extends MY_Controller
 						echo call_payu( $payuparams );
 						die();
 					} elseif ( $gateway_details[0]->type_id == TWOCHECKOUT_PAYMENT_GATEWAY ) {
+					    
 						$this->load->helper('2check-payment');
 						$config = array();
 						$url = 'https://www.2checkout.com/checkout/purchase';
@@ -178,6 +187,7 @@ class Payment extends MY_Controller
 						$config['x_receipt_link_url'] 	= base_url() . 'payment/twocheckout_status';
 						twocheck_redirect( $url, $config );
 					} elseif( $gateway_details[0]->type_id == TPAY_PAYMENT_GATEWAY ) {
+					    
 						$this->insert_transaction( 'tpay' );
 						$config = array();
 						foreach($field_values as $value) {
@@ -202,6 +212,7 @@ class Payment extends MY_Controller
 						echo transferuj_process_payment( $config );
 						die();
 					} elseif( $gateway_details[0]->type_id == PAGSEGURO_PAYMENT_GATEWAY ) {
+					    
 						$payment = $this->insert_transaction( 'pagseguro' );
 						$config = array();
 						$pagseguro_mode = 'sandbox';
@@ -351,11 +362,60 @@ class Payment extends MY_Controller
 						$this->payza->pay($this->ion_auth->get_user_id(), $package_id, $cart_details );
 						die();
 					} elseif( $gateway_details[0]->type_id == RAZORPAY_PAYMENT_GATEWAY ) {
+					    
 						$url = base_url() . 'student/paywith_razorpay/package/'.$package_id.'/gateway/'.RAZORPAY_PAYMENT_GATEWAY;
 						redirect( $url );
 					}elseif ( $gateway_details[0]->type_id == MANUAL_TRANSFER ) {
+						//memulai notifikasi ke user saat topup payment
+					$student_id 		= $this->ion_auth->get_user_id();
+			//Email Alert to Student - Start
+			//Get Top Up Payment Email Template
+			$email_tpl = $this->base_model->fetch_records_from('email_templates', array('template_status' => 'Active', 'email_template_id' => '19'));
+
+			if (!empty($email_tpl)) {
+
+				$email_tpl = $email_tpl[0];
+
+				$student_rec = getUserRec($student_id);
+
+
+				if (!empty($email_tpl->from_email)) {
+
+					$from = $email_tpl->from_email;
+				} else {
+
+					$from 	= get_system_settings('Portal_Email');
+				}
+
+				$to 	= $student_rec->email;
+				if (!empty($email_tpl->template_subject)) {
+
+					$sub = $email_tpl->template_subject;
+				} else {
+
+					$sub = get_languageword("Top Up Payment");
+				}
+
+				if (!empty($email_tpl->template_content)) {
+
+					$original_vars  = array($student_rec->username );
+					$temp_vars		= array('___FIRST_NAME___');
+					$msg = str_replace($temp_vars, $original_vars, $email_tpl->template_content);
+				} else {
+
+					$msg = get_languageword('please') . " <a href='" . URL_AUTH_LOGIN . "'> " . get_languageword('Login Here') . "</a> " . get_languageword('to view the booking details');
+					$msg .= "<p>" . get_languageword('Thank you') . "</p>";
+				}
+
+				sendEmail('MUBALIGH.ID', $to, $sub, $msg);
+			}
+			//Email Alert to Tutor - End					    
+						
 						$this->insert_transaction( 'manual', array('is_valid_request_clear' => 'yes', 'is_redirect' => 'yes') );
+							
 					}
+					
+				
 				}
 				else
 				{

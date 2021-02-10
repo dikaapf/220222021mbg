@@ -2101,64 +2101,7 @@ class Student extends MY_Controller
 						$this->prepare_flashmessage(get_languageword('record updated successfully'), 0);
 						//sendEmail($from,$to,$subject,$msg)
 						//sendEmail( 'mubaligh.id@gmail.com', 'mubaligh.id@gmail.com', 'Status Order', 'Pesan Order' );							
-						$student_id 		= $this->ion_auth->get_user_id();
-
-
-						//Email Alert to Student - Start
-						//Get Top Up Payment Email Template
-						$email_tpl = $this->base_model->fetch_records_from('email_templates', array('template_status' => 'Active', 'email_template_id' => '6'));
-
-						if (!empty($email_tpl)) {
-
-							$email_tpl = $email_tpl[0];
-
-							if (!empty($email_tpl->from_email)) {
-
-								$from = $email_tpl->from_email;
-							} else {
-
-								$from 	= get_system_settings('Portal_Email');
-							}
-
-							$to 	= $student_rec->email;
-
-							if (!empty($email_tpl->template_subject)) {
-
-								$sub = $email_tpl->template_subject;
-							} else {
-
-								$sub = get_languageword("Student Address");
-							}
-
-							$student_addr = $student_rec->city . ", <br />" . $student_rec->land_mark . ", <br />" . $student_rec->country . ", <br/>Phone: " . $student_rec->phone;
-
-							$course_name = $this->base_model->fetch_value('categories', 'name', array('id' => $booking_det->course_id));
-
-							if (!empty($email_tpl->template_content)) {
-
-								$original_vars  = array($tutor_rec->username, $student_rec->username, $course_name, $booking_det->start_date . " & " . $booking_det->time_slot, $booking_det->preferred_location, $student_addr);
-								$temp_vars		= array('___TUTOR_NAME___', '___STUDENT_NAME___', '___COURSE_NAME___', '___DATE_TIME___', '___LOCATION___', '___STUDENT_ADDRESS___');
-								$msg = str_replace($temp_vars, $original_vars, $email_tpl->template_content);
-							} else {
-
-								$msg = "<p>
-										" . get_languageword('hello') . " " . $tutor_rec->username . ",</p>
-									<p>
-										" . get_languageword('You approved Student') . " &quot;" . $student_rec->username . "&quot; " . get_languageword('booking for the course') . " &quot;" . $course_name . "&quot;</p>
-									<p>
-										" . get_languageword('for the timeslot') . " &quot;" . $booking_det->start_date . " & " . $booking_det->time_slot . "&quot; and &quot; " . $booking_det->preferred_location . "&quot; " . get_languageword('as preferred location for sessions') . ".</p>
-									<p>
-										" . get_languageword('Below is the address of the Student') . "</p>
-									<p>
-										" . $student_addr . "</p>";
-
-								$msg .= "<p>" . get_languageword('Thank you') . "</p>";
-							}
-
-							sendEmail($from, $to, $sub, $msg);
-						}
-						//Email Alert to Tutor - End
-
+						
 						redirect('student/mysubscriptions');
 					}
 				}
