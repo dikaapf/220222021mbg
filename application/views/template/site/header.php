@@ -42,7 +42,18 @@
        <![endif]-->
 
     <link rel="stylesheet" type="text/css" href="<?php echo URL_FRONT_CSS;?>main.css">
+    
+    <!-- Google Analitic  -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NJ52KSGV2J"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'G-NJ52KSGV2J');
+    </script>
+    <!-- End Google Analitic  -->
 
 </head>
 
