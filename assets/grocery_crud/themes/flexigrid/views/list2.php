@@ -32,12 +32,12 @@
 							</div>
 						<?php } ?> <br>
 						<?php if (!$unset_edit) { ?>
-							<div class='tools'><a href='<?php echo $row->edit_url ?>' title='<?php echo $this->l('list_edit') ?> <?php echo $subject ?>' class="btn-link-dark"><?php echo get_languageword('Edit'); ?></a>
+							<div class='tools'><a href='<?php echo $row->edit_url ?>' title='<?php echo $this->l('list_edit') ?> <?php echo $subject ?>' class="btn-link-dark"><?php echo "Update"; ?></a>
 							<?php } ?>
 							</div><br>
 
 							<?php if (!$unset_read) { ?>
-								<div class='tools'><a href='<?php echo $row->read_url ?>' title='<?php echo $this->l('list_view') ?> <?php echo $subject ?>' class="btn-link-dark"><?php echo get_languageword('View Details'); ?></a>
+								<div class='tools'><a href='<?php echo $row->read_url ?>' title='<?php echo $this->l('list_view') ?> <?php echo $subject ?>' class="btn-link-dark"><?php echo get_languageword('Lihat Rincian'); ?></a>
 								<?php } ?>
 								</div><br>
 								<?php
@@ -46,10 +46,10 @@
 										$action = $actions[$action_unique_id];
 								?>
 										<a href="<?php echo $action_url; ?>" class="<?php echo $action->css_class; ?> crud-action" title="<?php echo $action->label ?>"><?php
-										if (!empty($action->image_url)) {
-										?><img src="<?php echo $action->image_url; ?>" alt="<?php echo $action->label ?>" class="crud-action" /><?php
-										}
-										?></a>
+																																										if (!empty($action->image_url)) {
+																																										?><img src="<?php echo $action->image_url; ?>" alt="<?php echo $action->label ?>" class="crud-action" /><?php
+																																																																			}
+																																																																				?></a>
 								<?php }
 								}
 								?>
