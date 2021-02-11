@@ -366,6 +366,7 @@ class Payment extends MY_Controller
 						$url = base_url() . 'student/paywith_razorpay/package/'.$package_id.'/gateway/'.RAZORPAY_PAYMENT_GATEWAY;
 						redirect( $url );
 					}elseif ( $gateway_details[0]->type_id == MANUAL_TRANSFER ) {
+					    
 						//memulai notifikasi ke user saat topup payment
 					$student_id 		= $this->ion_auth->get_user_id();
 			//Email Alert to Student - Start
@@ -407,7 +408,7 @@ class Payment extends MY_Controller
 					$msg .= "<p>" . get_languageword('Thank you') . "</p>";
 				}
 
-				sendEmail('MUBALIGH.ID', $to, $sub, $msg);
+				sendEmail('mubaligh.id@gmail.com', $to, $sub, $msg);
 			}
 			//Email Alert to Tutor - End					    
 						
