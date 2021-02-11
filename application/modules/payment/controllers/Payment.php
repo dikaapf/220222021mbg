@@ -40,6 +40,7 @@ class Payment extends MY_Controller
 				    
 					$field_values = $this->db->get_where('system_settings_fields',array('type_id' => $gateway_id))->result();
 					$total_amount 	= $package_info[0]->package_cost;
+			
 					
 					if(isset($package_info[0]->discount) && ($package_info[0]->discount != 0))
 					{
@@ -398,9 +399,10 @@ class Payment extends MY_Controller
 				}
 
 				if (!empty($email_tpl->template_content)) {
-
-					$original_vars  = array($student_rec->username );
-					$temp_vars		= array('___STUDENT_NAME___');
+//	$total_amount	___TOPUP_VALUE___
+$price  = 'Rp. '. number_format($total_amount,'0',',','.');
+					$original_vars  = array($student_rec->username,$price );
+					$temp_vars		= array('___STUDENT_NAME___','___TOPUP_VALUE___');
 					$msg = str_replace($temp_vars, $original_vars, $email_tpl->template_content);
 				} else {
 
