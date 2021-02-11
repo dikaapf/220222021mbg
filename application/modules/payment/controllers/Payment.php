@@ -400,7 +400,7 @@ class Payment extends MY_Controller
 				if (!empty($email_tpl->template_content)) {
 
 					$original_vars  = array($student_rec->username );
-					$temp_vars		= array('___FIRST_NAME___');
+					$temp_vars		= array('___STUDENT_NAME___');
 					$msg = str_replace($temp_vars, $original_vars, $email_tpl->template_content);
 				} else {
 
