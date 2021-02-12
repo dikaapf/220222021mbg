@@ -77,10 +77,10 @@ var_dump($transaction);die();
 						$this->update_status( $this->payment_table, array('payment_received' => 1 ), array( $this->payment_table_key => $reference) );
 					}
 				} else {
-					sendEmail( 'adiyya@gmail.com', 'adiyya@gmail', 'Pagseguro Payment Status', var_export($_POST, true) );
+					sendEmail( 'mubaligh.id@gmail.com', 'mubaligh.id', 'Pagseguro Payment Status', var_export($_POST, true) );
 				}
 			} catch ( Exception $e ) {
-				sendEmail( 'adiyya@gmail.com', 'adiyya@gmail', 'Pagseguro Payment Status', $e->getMessage() );
+				sendEmail( 'mubaligh.id@gmail.com', 'mubaligh.id', 'Pagseguro Payment Status', $e->getMessage() );
 				return;
 			}
 		}
