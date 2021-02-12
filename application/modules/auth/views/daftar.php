@@ -19,7 +19,7 @@
 							$opt_groups = array('' => get_languageword('Please select group'));
 							if (!empty($groups)) {
 								foreach ($groups as $g) {
-									$opt_groups[$g->id] = ucwords($g->name);
+									$opt_groups[$g->id] = ucwords($g->nameid);
 								}
 							}
 							echo form_dropdown('user_belongs_group', $opt_groups, $this->form_validation->set_value('user_belongs_group'), 'id="u_group" class="select-picker" onchange="toggle_name();"'); ?>
