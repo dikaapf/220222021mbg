@@ -17,7 +17,7 @@
 
 				<?php foreach($columns as $column){?>
 				<th width='<?php echo $column_width?>%'>
-					<div class="text-center field-sorting <?php if(isset($order_by[0]) &&  $column->field_name == $order_by[0]){?><?php echo $order_by[1]?><?php }?>" 
+					<div class="text-center field-sorting desc <?php if(isset($order_by[0]) &&  $column->field_name == $order_by[0]){?><?php echo $order_by[1]?><?php }?>" 
 						rel='<?php echo $column->field_name?>'>
 						<?php echo $column->display_as?>
 					</div>
