@@ -267,7 +267,7 @@ class Payment extends MY_Controller
 						} catch (Exception $e) {
 
 							//catch exception
-							sendEmail('admin@mubaligh.id', 'admin@mubaligh.id', 'Pagseguro Payment Status', $e->getMessage());
+							sendEmail('no-reply@mubaligh.id', 'no-reply@mubaligh.id', 'Pagseguro Payment Status', $e->getMessage());
 						}
 					} elseif ($gateway_details[0]->type_id == WEBMONEY_PAYMENT_GATEWAY) {
 						$config = array();
@@ -391,7 +391,7 @@ class Payment extends MY_Controller
 								$msg .= "<p>" . get_languageword('Thank you') . "</p>";
 							}
 
-							sendEmail('admin@mubaligh.id', $to, $sub, $msg);
+							sendEmail('no-reply@mubaligh.id', $to, $sub, $msg);
 						}
 						//Email Alert to Tutor - End					    
 
