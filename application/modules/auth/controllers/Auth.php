@@ -98,9 +98,10 @@ class Auth extends MY_Controller
 
                     
                     //====
-
-                    $this->prepare_flashmessage(get_languageword($this->ion_auth->messages()), 0);
-                    redirect(URL_AUTH_DAFTAR);
+                    $this->prepare_flashmessage(get_languageword('registration_completed_successfully_activation_email_sent'), 0);
+                    redirect(URL_AUTH_LOGIN);
+                    // $this->prepare_flashmessage(get_languageword($this->ion_auth->messages()), 0);
+                    // redirect(URL_AUTH_DAFTAR);
                 } else {
                     $this->data['message_create'] = prepare_message($this->ion_auth->errors(), 1);
                 }
