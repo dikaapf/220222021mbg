@@ -9,7 +9,7 @@
                 <?php 
 $contact_settings = $this->config->item('contact_settings');
 if( $contact_settings != '') { ?>
-                <div class="col-lg-3 col-md-3 col-sm-6 ">
+                <div class="col-lg-2 col-md-3 col-sm-6 ">
                     <h3 class="contact-head"><?php echo get_languageword('Contact Us');?></h3>
                     <ul class="contact-details">
                         <?php if(!empty($contact_settings->general_inquiries)) { ?>
@@ -36,7 +36,7 @@ if( $contact_settings != '') { ?>
                 <?php 
 $social_settings = $this->config->item('social_settings');
 if( $social_settings != '' ) { ?>
-                <div class="col-lg-3 col-md-3 col-sm-6 no-padleft">
+                <div class="col-lg-4 col-md-3 col-sm-6">
                     <h3 class="contact-head"><?php echo get_languageword('follow us');?></h3>
                     <ul class="contact-details">
 
@@ -61,6 +61,13 @@ if( $social_settings != '' ) { ?>
                         </li>
                         <?php } ?>
 
+                        <?php if(!empty($social_settings->instagram)) { ?>
+                        <li>
+                            <h4><?php echo get_languageword('Instagram')?>:</h4>
+                            <p><?php echo $social_settings->instagram; ?></p>
+                        </li>
+                        <?php } ?>
+
                         <?php if(!empty($social_settings->youtube)) { ?>
                         <li>
                             <h4><?php echo get_languageword('YouTube')?>:</h4>
@@ -77,7 +84,7 @@ if( $social_settings != '' ) { ?>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h4><?php echo get_languageword('Address');?>:</h4>
-                            <p><?php echo $this->config->item('site_settings')->address .', '.$this->config->item('site_settings')->city.', '. $this->config->item('site_settings')->state .', '.$this->config->item('site_settings')->country.', '.$this->config->item('site_settings')->zipcode ; ?>
+                            <p><?php echo $this->config->item('site_settings')->address .' '.$this->config->item('site_settings')->city.', '. $this->config->item('site_settings')->state .', '.$this->config->item('site_settings')->country.', '.$this->config->item('site_settings')->zipcode ; ?>
                             </p>
                 </div>
             </div>
