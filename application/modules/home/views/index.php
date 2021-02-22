@@ -42,6 +42,30 @@
     ?>
     <!-- Ends How-it-works #homepage -->
 
+    <!-- Youtube #Homepage -->
+    <div class="container" id='testimonials'>
+        <div class="row row-margin">
+            <div class="col-sm-12 ">
+                <h2 class="heading"><?php echo get_languageword('Masih_Bingung_Daftar_sebagai_Mitra'); ?> <?php echo get_languageword('Love Us'); ?></h2>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="owl-theme">
+                    <?php 
+                    echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/zCgFPnz8r0I?autoplay=1&mute=1&controls=0&loop=1" frameborder="2"></iframe>'; 
+                    ?>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="owl-theme">
+                    <?php 
+                    echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/z3uDxi1FSsw?autoplay=1&mute=1&controls=0&loop=1" frameborder="2"></iframe>'; 
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <!-- Youtube #Homepage -->
+
     <!-- Testimonial slider -->
     <div class="container" id='testimonials'>
         <div class="row row-margin">
