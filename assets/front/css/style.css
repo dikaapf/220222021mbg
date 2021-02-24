@@ -2025,6 +2025,7 @@ Side bar / Widget bar
   background: #fff;
 }
 
+
 /* ----------------------------------
   Homepage >> Header #Search
 ---------------------------------- */
@@ -2126,6 +2127,35 @@ background: linear-gradient(90deg, rgba(43,74,92,1) 0%, rgba(40,81,79,1) 50%, rg
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+
+/* ----------------------------------
+  Homepage >> Slider
+---------------------------------- */
+@keyframes slidy {
+  0% { left: 0%; }
+  20% { left: 0%; }
+  25% { left: -100%; }
+  45% { left: -100%; }
+  50% { left: -200%; }
+  70% { left: -200%; }
+  75% { left: -300%; }
+  95% { left: -300%; }
+  100% { left: -400%; }
+  }
+  
+  body { margin: 0;} 
+  section#slider { overflow: hidden; }
+  section#slider figure img { width: 20%; float: left;}
+  section#slider figure { 
+    position: absolute;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    text-align: left;
+    font-size: 0;
+    animation: 30s slidy infinite; 
+  }
+
 
 /* ----------------------------------
   Homepage >> Advantages
@@ -2585,6 +2615,34 @@ Homepage >> call-to register
 .profile-block p span {
   border-bottom: 1px solid #e27d7f;
 }
+
+/* ----------------------------------
+   Video Youtube >> Homepage
+---------------------------------- */
+
+[style*="--aspect-ratio"] > :first-child {
+  width: 100%;
+}
+[style*="--aspect-ratio"] > img {  
+  height: auto;
+}
+@supports (--custom:property) {
+  [style*="--aspect-ratio"] {
+    position: relative;
+  }
+  [style*="--aspect-ratio"]::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }  
+  [style*="--aspect-ratio"] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }  
+}
+
 
 /* ----------------------------------
    OwlSlider >> Testimonial Slider

@@ -1,5 +1,11 @@
     <!-- Header #homepage -->
-    <section class="header-homepage">
+    <section class="header-homepage" id="slider">
+        <base href="<?php echo RESOURCES_FRONT; ?>jquery.raty.css">
+            <figure>
+            <img src="images/img34.png" alt>
+            <img src="images/img35.png" alt>
+            <img src="images/img36.png" alt>
+            </figure>
         <div class="container">
             <div class="row header-margin">
                 <div class="col-sm-12">
@@ -42,29 +48,6 @@
     ?>
     <!-- Ends How-it-works #homepage -->
 
-    <!-- Youtube #Homepage -->
-    <div class="container" id='testimonials'>
-        <div class="row row-margin">
-            <div class="col-sm-12 ">
-                <h2 class="heading"><?php echo get_languageword('Masih_Bingung_Daftar_sebagai_Mitra'); ?> <?php echo get_languageword('Love Us'); ?></h2>
-            </div>
-            <div class="col-md-6 col-sm-12">
-                <div class="owl-theme">
-                    <?php 
-                    echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/zCgFPnz8r0I?autoplay=1&mute=1&controls=0&loop=1" frameborder="2"></iframe>'; 
-                    ?>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-12">
-                <div class="owl-theme">
-                    <?php 
-                    echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/z3uDxi1FSsw?autoplay=1&mute=1&controls=0&loop=1" frameborder="2"></iframe>'; 
-                    ?>
-                </div>
-            </div>
-        </div>
-    </div>  
-    <!-- Youtube #Homepage -->
 
     <!-- Testimonial slider -->
     <div class="container" id='testimonials'>
@@ -103,6 +86,30 @@
         </div>
     </div>
     <!-- Ends Testimonial slider -->
+
+    <!-- Youtube #Homepage -->
+    <div class="container" id='testimonials'>
+        <div class="row row-margin">
+            <div class="col-sm-12 ">
+                <h2 class="heading"><?php echo get_languageword('Masih_Bingung_Daftar_sebagai_Mitra_Pengajar'); ?> <?php echo get_languageword('Love Us'); ?></h2>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="owl-theme" style="--aspect-ratio: 16/9;">
+                    <?php 
+                    echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/zCgFPnz8r0I?autoplay=1&mute=1&controls=0&loop=1" frameborder="2"></iframe>'; 
+                    ?>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="owl-theme" style="--aspect-ratio: 16/9;">
+                    <?php 
+                    echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/z3uDxi1FSsw?autoplay=1&mute=1&controls=0&loop=1" frameborder="2"></iframe>'; 
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>  
+    <!-- Youtube #Homepage -->
 
     <!-- Counter #Homepage -->
     <!-- Disable terlebih dahulu jumlah pengaajaran -->
@@ -151,6 +158,7 @@
     <?php } ?>
 
     <link rel="stylesheet" href="<?php echo URL_FRONT_CSS; ?>jquery.raty.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="<?php echo URL_FRONT_JS; ?>jquery.raty.js"></script>
     <script>
         /****** Tutor Avg. Rating  ******/
@@ -162,4 +170,20 @@
             },
             readOnly: true
         });
+    </script>
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+        var i;
+        var x = document.getElementsByClassName("header-homepage");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 2000); // Change image every 2 seconds
+        }
     </script>
