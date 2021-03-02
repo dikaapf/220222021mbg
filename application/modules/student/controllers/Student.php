@@ -924,7 +924,7 @@ class Student extends MY_Controller
 
 		$this->data['message'] = $this->session->flashdata('message');
 
-		$this->prepare_flashmessage(get_languageword("Segera selesaikan pembayaran Top Up anda melalui transfer ke rekening Bank Syariah Indonesia (451) 7149152215 an PT Mubaligh Teknologi Indonesia dan lakukan konfirmasi via whatsapp ke nomor 0897 6346 370."), 2);
+		$this->prepare_flashmessage(get_languageword("Segera selesaikan pembayaran Top Up anda melalui transfer ke rekening Bank Syariah Indonesia (451) 7149152215 an PT Mubaligh Teknologi Indonesia dan lakukan konfirmasi via whatsapp ke nomor 0813 1515 7521."), 2);
 
 		$user_id = $this->ion_auth->get_user_id();
 		$this->load->library(array('grocery2_CRUD'));
@@ -2101,7 +2101,7 @@ class Student extends MY_Controller
 						$this->prepare_flashmessage(get_languageword('record updated successfully'), 0);
 						//sendEmail($from,$to,$subject,$msg)
 						//sendEmail( 'mubaligh.id@gmail.com', 'mubaligh.id@gmail.com', 'Status Order', 'Pesan Order' );							
-						
+
 						redirect('student/mysubscriptions');
 					}
 				}
