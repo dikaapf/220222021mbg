@@ -26,13 +26,13 @@
                 if (strip_tags($this->config->item('site_settings')->get_app_section) == "Off")
                     $col_size = 12;
                 else
-                    $col_size = 9;
+                    $col_size = 8;
             ?>
              <div class="row row-margin">
                  <?php if (!empty($activemenu) && $activemenu == "home") echo $this->session->flashdata('message'); ?>
                  <div class="col-lg-<?php echo $col_size; ?> col-md-12 col-sm-12">
                      <div class="row">
-                         <div class="col-sm-3">
+                         <div class="col-sm-5">
                              <h4 class="footer-head"><?php echo get_languageword('Get to Know Us'); ?></h4>
                              <ul class="footer-links">
                                  <li><a href="<?php echo URL_HOME_ABOUT_US; ?>"><?php echo get_languageword('About Us'); ?></a></li>
@@ -106,7 +106,7 @@
                     if (strip_tags($this->config->item('site_settings')->get_app_section) == "On") {
 
                         if ((isset($this->config->item('site_settings')->androd_app) && $this->config->item('site_settings')->androd_app != '') || (isset($this->config->item('site_settings')->ios_app) && $this->config->item('site_settings')->ios_app != '')) { ?>
-                         <div class="col-lg-3 col-md-6 col-sm-6">
+                         <div class="col-lg-4 col-md-6 col-sm-6">
                              <h4 class="footer-color-head"><span><?php echo get_languageword('Get our app'); ?></span>.</h4>
                              <p class="footer-text"><?php echo get_languageword('Send a download link to your mail'); ?>.</p>
                              <div class="footer-newsletter">
