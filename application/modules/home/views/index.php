@@ -1,11 +1,6 @@
     <!-- Header #homepage -->
-    <section class="header-homepage" id="slider">
+    <section class="header-homepage">
         <base href="<?php echo RESOURCES_FRONT; ?>jquery.raty.css">
-            <figure>
-            <img src="images/img34.png" alt>
-            <img src="images/img35.png" alt>
-            <img src="images/img36.png" alt>
-            </figure>
         <div class="container">
             <div class="row header-margin">
                 <div class="col-sm-12">

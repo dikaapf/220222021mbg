@@ -2036,6 +2036,7 @@ Side bar / Widget bar
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  animation:slider 20s infinite linear; 
 }
 
 .header-homepage:before {
@@ -2047,10 +2048,15 @@ Side bar / Widget bar
   background-color: rgba(125, 133, 133, 0.78);
 }
 
-/* .header-homepage {
-background: rgb(43,74,92);
-background: linear-gradient(90deg, rgba(43,74,92,1) 0%, rgba(40,81,79,1) 50%, rgba(35,70,66,1) 100%); 
-} */
+/* ----------------------------------
+  Homepage >> Slider
+---------------------------------- */
+@keyframes slider {
+  0% { background-image: url(../images/img40.jpg); }
+  30% { background-image: url(../images/img41.jpg); }
+  50% { background-image: url(../images/img42.jpg); }
+  80% { background-image: url(../images/img43.jpg); }
+  }
 
 .header-margin {
   /* margin-top: 60px; */
@@ -2127,34 +2133,6 @@ background: linear-gradient(90deg, rgba(43,74,92,1) 0%, rgba(40,81,79,1) 50%, rg
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-
-/* ----------------------------------
-  Homepage >> Slider
----------------------------------- */
-@keyframes slidy {
-  0% { left: 0%; }
-  20% { left: 0%; }
-  25% { left: -100%; }
-  45% { left: -100%; }
-  50% { left: -200%; }
-  70% { left: -200%; }
-  75% { left: -300%; }
-  95% { left: -300%; }
-  100% { left: -400%; }
-  }
-  
-  body { margin: 0;} 
-  section#slider { overflow: hidden; }
-  section#slider figure img { width: 20%; float: left;}
-  section#slider figure { 
-    position: absolute;
-    width: 500%;
-    margin: 0;
-    left: 0;
-    text-align: left;
-    font-size: 0;
-    animation: 30s slidy infinite; 
-  }
 
 
 /* ----------------------------------
