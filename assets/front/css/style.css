@@ -2025,6 +2025,7 @@ Side bar / Widget bar
   background: #fff;
 }
 
+
 /* ----------------------------------
   Homepage >> Header #Search
 ---------------------------------- */
@@ -2035,6 +2036,7 @@ Side bar / Widget bar
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  animation:slider 20s infinite linear; 
 }
 
 .header-homepage:before {
@@ -2046,10 +2048,15 @@ Side bar / Widget bar
   background-color: rgba(125, 133, 133, 0.78);
 }
 
-/* .header-homepage {
-background: rgb(43,74,92);
-background: linear-gradient(90deg, rgba(43,74,92,1) 0%, rgba(40,81,79,1) 50%, rgba(35,70,66,1) 100%); 
-} */
+/* ----------------------------------
+  Homepage >> Slider
+---------------------------------- */
+@keyframes slider {
+  0% { background-image: url(../images/img40.jpg); }
+  30% { background-image: url(../images/img41.jpg); }
+  50% { background-image: url(../images/img42.jpg); }
+  80% { background-image: url(../images/img43.jpg); }
+  }
 
 .header-margin {
   /* margin-top: 60px; */
@@ -2126,6 +2133,7 @@ background: linear-gradient(90deg, rgba(43,74,92,1) 0%, rgba(40,81,79,1) 50%, rg
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+
 
 /* ----------------------------------
   Homepage >> Advantages
@@ -2585,6 +2593,34 @@ Homepage >> call-to register
 .profile-block p span {
   border-bottom: 1px solid #e27d7f;
 }
+
+/* ----------------------------------
+   Video Youtube >> Homepage
+---------------------------------- */
+
+[style*="--aspect-ratio"] > :first-child {
+  width: 100%;
+}
+[style*="--aspect-ratio"] > img {  
+  height: auto;
+}
+@supports (--custom:property) {
+  [style*="--aspect-ratio"] {
+    position: relative;
+  }
+  [style*="--aspect-ratio"]::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }  
+  [style*="--aspect-ratio"] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }  
+}
+
 
 /* ----------------------------------
    OwlSlider >> Testimonial Slider
