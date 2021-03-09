@@ -5,8 +5,8 @@
 
 <ul class="home-search">
 
-
-    <?php if(!empty($location_opts)) { ?>
+    <!-- Disable Pencarian Lokasi -->
+    <!-- <?php if(!empty($location_opts)) { ?>
     <li>
         <?php
 
@@ -14,7 +14,7 @@
 
         ?>
     </li>
-    <?php } ?>
+    <?php } ?> -->
 
 
     <?php if(!empty($course_opts)) { ?>
