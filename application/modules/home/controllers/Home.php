@@ -51,7 +51,7 @@ class Home extends MY_Controller
 
 		//Course Options
 		$courses = $this->home_model->get_courses();
-		$course_opts[''] = get_languageword('type_of_course');
+		$course_opts[''] = get_languageword('Materi');
 		if(!empty($courses)) {
 			foreach ($courses as $key => $value) {
 				if($show_records_count_in_search_filters == "Yes") {
@@ -1984,4 +1984,3 @@ class Home extends MY_Controller
 
 
 }
-?>
